@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Sunscreen Filter Database</title>
+  <style>
+    body { 
+      font-family: Arial, sans-serif; 
+      margin: 40px;
+      line-height: 1.6;
+    }
+    h1 { color: #005277; }
+    .card {
+      border: 1px solid #ddd;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+
+<h1>UV Filter & Ingredient Database</h1>
+<p>Welcome! This site tracks UV filters, skincare ingredients, and rosacea-safety data.</p>
+
+<div class="card">
+  <h2>UV Filter Categories</h2>
+  <ul>
+    <li><a href="filters/chemical.html">Chemical Filters</a></li>
+    <li><a href="filters/mineral.html">Mineral Filters</a></li>
+    <li><a href="filters/europe.html">European Filters</a></li>
+    <li><a href="filters/korea.html">K-Beauty Filters</a></li>
+  </ul>
+</div>
+
+</body>
+</html>
