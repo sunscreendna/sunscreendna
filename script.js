@@ -14,6 +14,7 @@ function displaySunscreens(list) {
     div.innerHTML = `
       <h2>${item.brand} – ${item.product}</h2>
       <p><strong>Type:</strong> ${item.type}</p>
+      <p><strong>Niacinamide?</strong> ${item.niacinamide}</p>
       <p><strong>Filters:</strong> ${item.filters.map(f => f.name).join(", ")}</p>
       <p><strong>Rosacea Safety:</strong> ${item.rosacea_safety}</p>
       <details>
