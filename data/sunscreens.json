@@ -11,7 +11,7 @@
     "visible_light_protection": "low",
     "water_resistant": "none",
     "texture_finish": "natural-dewy",
-    "white_cast": "none",
+    "white_cast": 0,
     "country": "Korea",
     "fragrance": "none",
 
@@ -41,15 +41,9 @@
     },
 
     "ingredients": [
-      "Water",
-      "Butylene Glycol",
-      "Niacinamide",
-      "Glycerin",
-      "Uvinul A Plus",
-      "Uvinul T 150",
-      "Tinosorb M",
-      "Oryza Sativa Extract",
-      "Bifida Ferment Lysate"
+      "Water","Butylene Glycol","Niacinamide","Glycerin",
+      "Uvinul A Plus","Uvinul T 150","Tinosorb M",
+      "Oryza Sativa Extract","Bifida Ferment Lysate"
     ],
 
     "notes": "Very popular K-beauty sunscreen with high tolerability."
@@ -67,7 +61,7 @@
     "visible_light_protection": "low",
     "water_resistant": "none",
     "texture_finish": "hydrating-dewy",
-    "white_cast": "none",
+    "white_cast": 0,
     "country": "Korea",
     "fragrance": "none",
 
@@ -94,13 +88,8 @@
     },
 
     "ingredients": [
-      "Water",
-      "Birch Juice",
-      "1,2-Hexanediol",
-      "Glycerin",
-      "Niacinamide",
-      "Uvinul A Plus",
-      "Uvinul T 150"
+      "Water","Birch Juice","1,2-Hexanediol","Glycerin",
+      "Niacinamide","Uvinul A Plus","Uvinul T 150"
     ],
 
     "notes": "Hydrating; good for dry and dehydrated skin."
@@ -118,7 +107,7 @@
     "visible_light_protection": "minimal",
     "water_resistant": "none",
     "texture_finish": "lightweight",
-    "white_cast": "none",
+    "white_cast": 0,
     "country": "USA",
     "fragrance": "none",
 
@@ -145,14 +134,254 @@
     },
 
     "ingredients": [
-      "Zinc Oxide",
-      "Octinoxate",
-      "Niacinamide",
-      "Sodium Hyaluronate",
-      "Tocopheryl Acetate",
-      "Lactic Acid"
+      "Zinc Oxide","Octinoxate","Niacinamide",
+      "Sodium Hyaluronate","Tocopheryl Acetate","Lactic Acid"
     ],
 
     "notes": "Extremely popular for rosacea and acne-prone skin."
+  },
+
+  {
+    "id": "goodal-heartleaf-calming-moisture-sun-cream",
+    "brand": "Goodal",
+    "product": "Heartleaf Calming Moisture Sun Cream",
+    "niacinamide": "No",
+    "type": "chemical",
+
+    "spf": 50,
+    "pa": "PA++++",
+    "visible_light_protection": "low",
+    "water_resistant": "none",
+    "texture_finish": "natural-hydrating",
+    "white_cast": 0,
+    "country": "Korea",
+    "fragrance": "none",
+
+    "filters": [
+      { "name": "Ethylhexyl Triazone", "category": "UVB" },
+      { "name": "Diethylamino Hydroxybenzoyl Hexyl Benzoate", "category": "UVA" },
+      { "name": "Methylene Bis-Benzotriazolyl Tetramethylbutylphenol", "category": "broad-spectrum" },
+      { "name": "Diethylhexyl Butamido Triazone", "category": "UVB" }
+    ],
+
+    "barrier_support": "3",
+
+    "safety_scores": {
+      "rosacea": { "stinging": 1, "flushing": 1, "barrier": 2 },
+      "acne": { "comedogenicity": 1, "fungal_acne": 0 },
+      "sensitive": { "fragrance": "no", "essential_oils": "no", "surfactant_strength": "low" }
+    },
+
+    "ingredients": [
+      "Water","Dibutyl Adipate","Propanediol","Polymethylsilsesquioxane",
+      "Diethylamino Hydroxybenzoyl Hexyl Benzoate","Ethylhexyl Triazone",
+      "Methylene Bis-Benzotriazolyl Tetramethylbutylphenol","Coco-Caprylate/Caprate",
+      "Diethylhexyl Butamido Triazone","Butylene Glycol","Glycerin","1,2-Hexanediol",
+      "Caprylyl Methicone","Houttuynia Cordata Extract","Pentylene Glycol","Behenyl Alcohol",
+      "Poly C10-30 Alkyl Acrylate","Polyglyceryl-3 Methylglucose Distearate","Decyl Glucoside",
+      "Tromethamine","Carbomer","Acrylates/C10-30 Alkyl Acrylate Crosspolymer",
+      "Sodium Stearoyl Glutamate","Polyacrylate Crosspolymer-6","Ethylhexylglycerin",
+      "Xanthan Gum","t-Butyl Alcohol","Tocopherol"
+    ],
+
+    "notes": "Gentle chemical sunscreen with heartleaf extract; typically well-tolerated for sensitive and barrier-compromised skin."
+  },
+
+  {
+    "id": "eltamd-uv-skin-recovery-green-tint",
+    "brand": "EltaMD",
+    "product": "UV Skin Recovery Color Correcting Green Tint Broad Spectrum SPF 50",
+    "niacinamide": "No",
+    "type": "mineral",
+
+    "spf": 50,
+    "pa": "PA++++",
+    "visible_light_protection": "high",
+    "water_resistant": "none",
+    "texture_finish": "natural-soft-matte",
+    "white_cast": 0,
+    "country": "USA",
+    "fragrance": "none",
+
+    "filters": [
+      { "name": "Zinc Oxide", "category": "mineral (broad-spectrum)" }
+    ],
+
+    "barrier_support": "4",
+
+    "safety_scores": {
+      "rosacea": { "stinging": 0, "flushing": 1, "barrier": 4 },
+      "acne": { "comedogenicity": 1, "fungal_acne": 0 },
+      "sensitive": { "fragrance": "no", "essential_oils": "no", "surfactant_strength": "low" }
+    },
+
+    "ingredients": [
+      "Water","Dimethicone","Butyloctyl Salicylate","Caprylic/Capric Triglyceride",
+      "Ethylhexyl Methoxycrylene","Octyldodecyl Neopentanoate","Taurine",
+      "Hydroxyethyl Acrylate/Sodium Acryloyldimethyl Taurate Copolymer",
+      "Butylene Glycol","Phenoxyethanol","Cetearyl Alcohol","Arginine",
+      "Triethoxycaprylylsilane","Oleth-3 Phosphate","Oleth-20","Coco-Glucoside",
+      "Polyisobutene","Polyhydroxystearic Acid","PEG-7 Trimethylolpropane Coconut Ether",
+      "Salicyloyl Phytosphingosine","Tocopheryl Acetate","Glycerin","Tocopherol",
+      "Ethylhexylglycerin","Pongamia Pinnata Seed Extract","Glycine","Lactic Acid",
+      "Polyglyceryl-10 Stearate","Centella Asiatica Leaf Extract","Triethyl Citrate",
+      "Polyglyceryl-6 Behenate","Behenic Acid","Ceramide NP","Cholesterol",
+      "Glyceryl Stearate","Ceramide NS","Ceramide EOP","Ceramide AP",
+      "Sodium Cetearyl Sulfate","Yellow 5","Blue 1"
+    ],
+
+    "notes": "Mineral-only zinc oxide formula with green tint for neutralizing redness. Strong barrier support; excellent for rosacea."
+  },
+
+  {
+    "id": "boj-relief-sun-aqua-fresh-rice-b5",
+    "brand": "Beauty of Joseon",
+    "product": "Relief Sun Aqua Fresh Rice + B5",
+    "niacinamide": "No",
+    "type": "chemical",
+
+    "spf": 50,
+    "pa": "PA++++",
+    "visible_light_protection": "low",
+    "water_resistant": "none",
+    "texture_finish": "lightweight-hydrating",
+    "white_cast": 0,
+    "country": "Korea",
+    "fragrance": "none",
+
+    "filters": [
+      { "name": "Ethylhexyl Triazone", "category": "UVB" },
+      { "name": "Drometrizole Trisiloxane", "category": "broad-spectrum" },
+      { "name": "Diethylamino Hydroxybenzoyl Hexyl Benzoate", "category": "UVA" },
+      { "name": "Bis-Ethylhexyloxyphenol Methoxyphenyl Triazine", "category": "broad-spectrum" }
+    ],
+
+    "barrier_support": "4",
+
+    "safety_scores": {
+      "rosacea": { "stinging": 1, "flushing": 1, "barrier": 3 },
+      "acne": { "comedogenicity": 1, "fungal_acne": 0 },
+      "sensitive": { "fragrance": "no", "essential_oils": "no", "surfactant_strength": "low" }
+    },
+
+    "ingredients": [
+      "Water","Oryza Sativa (Rice) Seed Water","Dibutyl Adipate","Butyloctyl Salicylate",
+      "Ethylhexyl Triazone","Drometrizole Trisiloxane","Polyglyceryl-3 Distearate",
+      "Terephthalylidene Dicamphor Sulfonic Acid",
+      "Diethylamino Hydroxybenzoyl Hexyl Benzoate","Polymethylsilsesquioxane",
+      "Tromethamine","1,2-Hexanediol","Panthenol","Pentylene Glycol","Glyceryl Stearate",
+      "Silica","Caprylyl Methicone","Bis-Ethylhexyloxyphenol Methoxyphenyl Triazine",
+      "Propanediol","Potassium Cetyl Phosphate","Poly C10-30 Alkyl Acrylate",
+      "Methylpropanediol","Carbomer","Acrylates/C10-30 Alkyl Acrylate Crosspolymer",
+      "Ethylhexylglycerin","Xanthan Gum","Glycerin","Polyether-1",
+      "Avena Sativa (Oat) Kernel Extract","Cynara Scolymus (Artichoke) Leaf Extract",
+      "Polyquaternium-51","Camellia Sinensis Leaf Water","Hydrogenated Lecithin",
+      "Beta-Glucan","Biosaccharide Gum-1","Inositol","Tocopherol","Ferulic Acid",
+      "Oryza Sativa (Rice) Bran Oil","Citric Acid","Ceramide NP",
+      "Phytosphingosine","Sodium Hyaluronate","Rice Amino Acids","Rice sh-Oligopeptide-1"
+    ],
+
+    "notes": "Light hydrating chemical sunscreen with panthenol, beta-glucan, oat extract, and ceramide NP. Excellent for sensitive skin."
+  },
+
+  {
+    "id": "thankyoufarmer-skin-relief-sun-cream",
+    "brand": "Thank You Farmer",
+    "product": "Skin Relief Sun Cream",
+    "niacinamide": "Yes",
+    "type": "chemical",
+
+    "spf": 50,
+    "pa": "PA++++",
+    "visible_light_protection": "low",
+    "water_resistant": "none",
+    "texture_finish": "natural-hydrating",
+    "white_cast": 0,
+    "country": "Korea",
+    "fragrance": "none",
+
+    "filters": [
+      { "name": "Diethylamino Hydroxybenzoyl Hexyl Benzoate", "category": "UVA" },
+      { "name": "Ethylhexyl Triazone", "category": "UVB" },
+      { "name": "Methylene Bis-Benzotriazolyl Tetramethylbutylphenol", "category": "broad-spectrum" },
+      { "name": "Diethylhexyl Butamido Triazone", "category": "UVB" }
+    ],
+
+    "barrier_support": "3",
+
+    "safety_scores": {
+      "rosacea": { "stinging": 1, "flushing": 2, "barrier": 3 },
+      "acne": { "comedogenicity": 1, "fungal_acne": 0 },
+      "sensitive": { "fragrance": "no", "essential_oils": "no", "surfactant_strength": "low" }
+    },
+
+    "ingredients": [
+      "Water","Dibutyl Adipate","Propanediol","Diethylamino Hydroxybenzoyl Hexyl Benzoate",
+      "Polymethylsilsesquioxane","Ethylhexyl Triazone","Niacinamide",
+      "Methylene Bis-benzotriazolyl Tetramethylbutylphenol",
+      "Coco-Caprylate/Caprate","Caprylyl Methicone","Diethylhexyl Butamido Triazone",
+      "Glycerin","Butylene Glycol","1,2-Hexanediol","Pentylene Glycol","Centella Asiatica Extract",
+      "Salvia Hispanica Seed Extract","Anastatica Hierochuntica Extract",
+      "Solanum Melongena (Eggplant) Fruit Extract","Lonicera Japonica Flower Extract",
+      "Forsythia Suspensa Fruit Extract","Angelica Gigas Root Extract",
+      "Cnidium Officinale Root Extract","Gardenia Jasminoides Fruit Extract",
+      "Coptis Japonica Root Extract","Glycyrrhiza Uralensis Root Extract",
+      "Behenyl Alcohol","Poly C10-30 Alkyl Acrylate","Polyglyceryl-3 Methylglucose Distearate",
+      "Decyl Glucoside","Tromethamine","Carbomer",
+      "Acrylates/C10-30 Alkyl Acrylate Crosspolymer",
+      "Sodium Stearoyl Glutamate","Polyacrylate Crosspolymer-6",
+      "Ethylhexylglycerin","Adenosine","Xanthan Gum","t-Butyl Alcohol","Tocopherol"
+    ],
+
+    "notes": "Botanical-heavy chemical sunscreen with centella, niacinamide, licorice, and soothing extracts. Great formula but may be too botanical for hypersensitive rosacea."
+  },
+
+  {
+    "id": "iunik-centella-calming-daily-sunscreen",
+    "brand": "iUNIK",
+    "product": "Centella Calming Daily Sunscreen",
+    "niacinamide": "Yes",
+    "type": "chemical",
+
+    "spf": 50,
+    "pa": "PA++++",
+    "visible_light_protection": "low",
+    "water_resistant": "none",
+    "texture_finish": "natural-hydrating",
+    "white_cast": 0,
+    "country": "Korea",
+    "fragrance": "none",
+
+    "filters": [
+      { "name": "Diethylamino Hydroxybenzoyl Hexyl Benzoate", "category": "UVA" },
+      { "name": "Ethylhexyl Triazone", "category": "UVB" },
+      { "name": "Methylene Bis-Benzotriazolyl Tetramethylbutylphenol", "category": "broad-spectrum" }
+    ],
+
+    "barrier_support": "4",
+
+    "safety_scores": {
+      "rosacea": { "stinging": 1, "flushing": 2, "barrier": 3 },
+      "acne": { "comedogenicity": 1, "fungal_acne": 0 },
+      "sensitive": { "fragrance": "no", "essential_oils": "no", "surfactant_strength": "low" }
+    },
+
+    "ingredients": [
+      "Centella Asiatica Extract","Water","Dibutyl Adipate",
+      "Diethylamino Hydroxybenzoyl Hexyl Benzoate","Ethylhexyl Triazone",
+      "Glycerin","Niacinamide","Polymethyl Methacrylate",
+      "Methylene Bis-Benzotriazolyl Tetramethylbutylphenol",
+      "Polysilicone-15","1,2-Hexanediol","Beta-Glucan","Allantoin",
+      "Butylene Glycol","Pentylene Glycol","Arachidyl Alcohol",
+      "Sodium Stearoyl Glutamate","Polyglyceryl-3 Methylglucose Distearate",
+      "Sorbitan Sesquioleate","Behenyl Alcohol","Decyl Glucoside",
+      "Caprylyl Glycol","Arachidyl Glucoside","Hydroxyacetophenone",
+      "Acrylates/C10-30 Alkyl Acrylate Crosspolymer","Carbomer",
+      "Polyacrylate Crosspolymer-6","Adenosine",
+      "Dipotassium Glycyrrhizate","Glucose","t-Butyl Alcohol",
+      "Xanthan Gum","Tromethamine","Disodium EDTA"
+    ],
+
+    "notes": "Very gentle daily chemical sunscreen with Centella, beta-glucan, allantoin, and licorice extract. Rosacea safe for most."
   }
 ]
