@@ -384,4 +384,457 @@
 
     "notes": "Very gentle daily chemical sunscreen with Centella, beta-glucan, allantoin, and licorice extract. Rosacea safe for most."
   }
+  {
+    "id": "lightsaver-shade0",
+    "brand": "Lightsaver",
+    "product": "Shade 0 Activated Non-Tinted Mineral Face Sunscreen",
+    "niacinamide": "Yes",
+    "type": "mineral",
+
+    "spf": 33,
+    "pa": "PA++++",
+    "visible_light_protection": "low",
+    "water_resistant": "none",
+    "texture_finish": "natural",
+    "white_cast": 1,
+    "country": "USA",
+    "fragrance": "none",
+
+    "filters": [
+      { "name": "Zinc Oxide", "category": "broad-spectrum" }
+    ],
+
+    "barrier_support": "5",
+
+    "safety_scores": {
+      "rosacea": { "stinging": 0, "flushing": 0, "barrier": 4 },
+      "acne": { "comedogenicity": 1, "fungal_acne": 0 },
+      "sensitive": {
+        "fragrance": "no",
+        "essential_oils": "no",
+        "surfactant_strength": "low"
+      }
+    },
+
+    "ingredients": [
+      "Zinc Oxide 14.2%", "Water", "Caprylic/Capric Triglyceride", "Niacinamide",
+      "Butyloctyl Salicylate", "Propanediol", "Squalane", "Aloe Barbadensis Leaf Juice",
+      "Sodium Acrylate/Sodium Acryloyldimethyl Taurate Copolymer", "1,2-Hexanediol",
+      "Cetyl Alcohol", "Glycol Stearate", "Helianthus Annuus Seed Oil",
+      "Hydroxyacetophenone", "Polyisobutene", "Glycerin", "Glyceryl Stearate",
+      "Lecithin", "Isostearic Acid", "Polyglyceryl-3 Polyricinoleate",
+      "Polyhydroxystearic Acid", "Vaccinium Vitis-Idaea Fruit Extract", "Xanthan Gum",
+      "Caprylyl/Capryl Glucoside", "Sorbitan Oleate", "Phenoxyethanol", "Citric Acid",
+      "Gluconolactone", "Plankton Extract", "Sodium Benzoate", "Potassium Sorbate",
+      "Calcium Gluconate", "Jojoba Esters", "Alumina", "Silica",
+      "Titanium Dioxide", "Iron Oxides"
+    ],
+
+    "notes": "Mineral sunscreen with photolyase; gentle, hydrating, suitable for sensitive skin."
+  },
+
+  {
+    "id": "scinic-super-mild-sun-essence",
+    "brand": "Scinic",
+    "product": "Enjoy Super Mild Sun Essence",
+    "niacinamide": "Yes",
+    "type": "chemical",
+
+    "spf": 50,
+    "pa": "PA++++",
+    "visible_light_protection": "low",
+    "water_resistant": "none",
+    "texture_finish": "natural",
+    "white_cast": 0,
+    "country": "Korea",
+    "fragrance": "none",
+
+    "filters": [
+      { "name": "Uvinul A Plus", "category": "UVA" },
+      { "name": "Tinosorb S", "category": "broad-spectrum" },
+      { "name": "Polysilicone-15", "category": "UVB" },
+      { "name": "Tinosorb M", "category": "broad-spectrum" },
+      { "name": "Uvinul T150", "category": "UVB" },
+      { "name": "IsNina", "category": "UVB" }
+    ],
+
+    "barrier_support": "3",
+
+    "safety_scores": {
+      "rosacea": { "stinging": 1, "flushing": 1, "barrier": 3 },
+      "acne": { "comedogenicity": 1, "fungal_acne": 0 },
+      "sensitive": { "fragrance": "no", "essential_oils": "no", "surfactant_strength": "low" }
+    },
+
+    "ingredients": [
+      "Water", "Dibutyl Adipate", "Propanediol", "Uvinul A Plus",
+      "Tinosorb S", "Polysilicone-15", "Tinosorb M", "Uvinul T150",
+      "Niacinamide", "IsNina", "Glycerin", "Butylene Glycol", "Green Tea Extract",
+      "Vanilla Extract", "Centella Asiatica Extract", "Bambusa Vulgaris Water",
+      "Adenosine", "Panthenol", "Silica", "Behenyl Alcohol"
+    ],
+
+    "notes": "Very gentle chemical sunscreen with modern filters and soothing plant extracts."
+  },
+
+  {
+    "id": "roundlab-1025-dokdo",
+    "brand": "Round Lab",
+    "product": "1025 Dokdo Sunscreen",
+    "niacinamide": "Yes",
+    "type": "chemical",
+
+    "spf": 50,
+    "pa": "PA++++",
+    "visible_light_protection": "low",
+    "water_resistant": "none",
+    "texture_finish": "natural-dewy",
+    "white_cast": 0,
+    "country": "Korea",
+    "fragrance": "none",
+
+    "filters": [
+      { "name": "Uvinul T150", "category": "UVB" },
+      { "name": "Mexoryl SX", "category": "UVA" },
+      { "name": "Uvinul A Plus", "category": "UVA" },
+      { "name": "Polysilicone-15", "category": "UVB" },
+      { "name": "Tinosorb S", "category": "broad-spectrum" }
+    ],
+
+    "barrier_support": "4",
+
+    "safety_scores": {
+      "rosacea": { "stinging": 1, "flushing": 1, "barrier": 4 },
+      "acne": { "comedogenicity": 1, "fungal_acne": 0 },
+      "sensitive": { "fragrance": "no", "essential_oils": "no", "surfactant_strength": "low" }
+    },
+
+    "ingredients": [
+      "Water", "Dibutyl Adipate", "Propanediol", "Ethylhexyl Triazone",
+      "Terephthalylidene Dicamphor Sulfonic Acid", "Niacinamide", "Tromethamine",
+      "Polyglyceryl-3 Distearate", "1,2-Hexanediol", "Pentylene Glycol",
+      "Diethylamino Hydroxybenzoyl Hexyl Benzoate", "Cetearyl Alcohol",
+      "Caprylyl Methicone", "Polysilicone-15", "Sea Water", "Sodium Hyaluronate",
+      "Hydrolyzed Hyaluronic Acid", "Centella Asiatica Leaf Extract",
+      "Green Tea Extract", "Pine Leaf Extract", "Coffee Seed Extract",
+      "Panthenol", "Allantoin", "Adenosine", "Tinosorb S"
+    ],
+
+    "notes": "Hydrating, gentle chemical sunscreen with multiple soothing extracts."
+  },
+
+  {
+    "id": "kopari-pure-protect-stick",
+    "brand": "Kopari",
+    "product": "Pure Protect Stick SPF 50+",
+    "niacinamide": "No",
+    "type": "mineral",
+
+    "spf": 50,
+    "pa": "PA++++",
+    "visible_light_protection": "high",
+    "water_resistant": "none",
+    "texture_finish": "dewy",
+    "white_cast": 0,
+    "country": "USA",
+    "fragrance": "none",
+
+    "filters": [
+      { "name": "Zinc Oxide", "category": "broad-spectrum" }
+    ],
+
+    "barrier_support": "5",
+
+    "safety_scores": {
+      "rosacea": { "stinging": 0, "flushing": 0, "barrier": 4 },
+      "acne": { "comedogenicity": 1, "fungal_acne": 0 },
+      "sensitive": { "fragrance": "no", "essential_oils": "no", "surfactant_strength": "low" }
+    },
+
+    "ingredients": [
+      "Zinc Oxide 23.8%", "Sunflower Seed Wax", "Caprylic/Capric Triglyceride",
+      "Dicaprylyl Carbonate", "C12-15 Alkyl Benzoate", "Ethyl Macadamiate",
+      "Shea Butter", "Tocopheryl Acetate", "Jojoba Esters", "Polyhydroxystearic Acid",
+      "Iron Oxides", "Titanium Dioxide"
+    ],
+
+    "notes": "Tint stick mineral sunscreen with high visible light protection."
+  },
+
+  {
+    "id": "celimax-heart-pink-toneup",
+    "brand": "Celimax",
+    "product": "Heart Pink Tone-Up Sun Cream",
+    "niacinamide": "Yes",
+    "type": "hybrid",
+
+    "spf": 50,
+    "pa": "PA++++",
+    "visible_light_protection": "high",
+    "water_resistant": "none",
+    "texture_finish": "velvety-matte",
+    "white_cast": 1,
+    "country": "Korea",
+    "fragrance": "none",
+
+    "filters": [
+      { "name": "Titanium Dioxide", "category": "broad-spectrum" },
+      { "name": "Uvinul A Plus", "category": "UVA" },
+      { "name": "Uvinul T150", "category": "UVB" },
+      { "name": "IsNina", "category": "UVB" }
+    ],
+
+    "barrier_support": "4",
+
+    "safety_scores": {
+      "rosacea": { "stinging": 1, "flushing": 1, "barrier": 3 },
+      "acne": { "comedogenicity": 1, "fungal_acne": 0 },
+      "sensitive": { "fragrance": "no", "essential_oils": "no", "surfactant_strength": "low" }
+    },
+
+    "ingredients": [
+      "Water", "Titanium Dioxide", "Dibutyl Adipate", "Propanediol",
+      "Caprylic/Capric Triglyceride", "Uvinul A Plus", "Uvinul T150",
+      "Niacinamide", "IsNina", "Houttuynia Cordata Extract", "Panthenol",
+      "Dimethicone", "Stearic Acid", "Alumina", "Several Hyaluronic Acids"
+    ],
+
+    "notes": "Hybrid pink tone-up with strong VL protection and a matte finish."
+  },
+
+  {
+    "id": "hera-multi-defense-fresh",
+    "brand": "Hera",
+    "product": "UV Protector Multi-Defense Fresh",
+    "niacinamide": "Yes",
+    "type": "chemical",
+
+    "spf": 50,
+    "pa": "PA++++",
+    "visible_light_protection": "low",
+    "water_resistant": "none",
+    "texture_finish": "natural-matte",
+    "white_cast": 0,
+    "country": "Korea",
+    "fragrance": "yes",
+
+    "filters": [
+      { "name": "Uvinul T150", "category": "UVB" },
+      { "name": "Mexoryl SX", "category": "UVA" },
+      { "name": "Uvinul A Plus", "category": "UVA" },
+      { "name": "Polysilicone-15", "category": "UVB" },
+      { "name": "Tinosorb S", "category": "broad-spectrum" }
+    ],
+
+    "barrier_support": "3",
+
+    "safety_scores": {
+      "rosacea": { "stinging": 2, "flushing": 3, "barrier": 2 },
+      "acne": { "comedogenicity": 1, "fungal_acne": 0 },
+      "sensitive": { "fragrance": "yes", "essential_oils": "yes", "surfactant_strength": "low" }
+    },
+
+    "ingredients": [
+      "Water", "Dibutyl Adipate", "Propanediol", "Ethylhexyl Triazone",
+      "Terephthalylidene Dicamphor Sulfonic Acid", "Niacinamide",
+      "Diethylamino Hydroxybenzoyl Hexyl Benzoate", "Polysilicone-15",
+      "Tinosorb S", "Fragrance", "Various Plant Extracts"
+    ],
+
+    "notes": "Luxurious fragranced sunscreen; elegant texture but not rosacea-safe."
+  },
+
+  {
+    "id": "merit-uniform-mineral",
+    "brand": "Merit",
+    "product": "The Uniform Tinted Mineral SPF45",
+    "niacinamide": "No",
+    "type": "mineral",
+
+    "spf": 45,
+    "pa": "PA++++",
+    "visible_light_protection": "high",
+    "water_resistant": "none",
+    "texture_finish": "velvety-soft-matte",
+    "white_cast": 0,
+    "country": "USA",
+    "fragrance": "none",
+
+    "filters": [
+      { "name": "Zinc Oxide", "category": "broad-spectrum" }
+    ],
+
+    "barrier_support": "4",
+
+    "safety_scores": {
+      "rosacea": { "stinging": 0, "flushing": 0, "barrier": 4 },
+      "acne": { "comedogenicity": 1, "fungal_acne": 0 },
+      "sensitive": { "fragrance": "no", "essential_oils": "no", "surfactant_strength": "low" }
+    },
+
+    "ingredients": [
+      "Zinc Oxide 15.065%", "Water", "Propanediol", "C13-15 Alkane",
+      "Butyloctyl Salicylate", "Corn Starch", "Coco-Caprylate",
+      "Polyhydroxystearic Acid", "Magnesium Sulfate", "Tocopherol",
+      "Titanium Dioxide", "Iron Oxides"
+    ],
+
+    "notes": "Tinted mineral sunscreen with excellent VL protection and blurring finish."
+  },
+
+  {
+    "id": "ciele-tint-protect",
+    "brand": "Ciele",
+    "product": "Tint & Protect SPF50+",
+    "niacinamide": "Yes",
+    "type": "mineral",
+
+    "spf": 50,
+    "pa": "PA++++",
+    "visible_light_protection": "high",
+    "water_resistant": "none",
+    "texture_finish": "natural",
+    "white_cast": 0,
+    "country": "USA",
+    "fragrance": "none",
+
+    "filters": [
+      { "name": "Zinc Oxide", "category": "broad-spectrum" }
+    ],
+
+    "barrier_support": "4",
+
+    "safety_scores": {
+      "rosacea": { "stinging": 0, "flushing": 0, "barrier": 4 },
+      "acne": { "comedogenicity": 1, "fungal_acne": 0 },
+      "sensitive": { "fragrance": "no", "essential_oils": "no", "surfactant_strength": "low" }
+    },
+
+    "ingredients": [
+      "Zinc Oxide 12%", "Water", "C12-15 Alkyl Benzoate", "Titanium Dioxide",
+      "Niacinamide", "Bisabolol", "Allantoin", "Dimethicone",
+      "Iron Oxides", "Mica"
+    ],
+
+    "notes": "Tinted mineral sunscreen with strong VL protection; very rosacea-friendly."
+  },
+
+  {
+    "id": "haruharu-black-rice-pure-mineral",
+    "brand": "Haruharu Wonder",
+    "product": "Black Rice Pure Mineral Relief Daily",
+    "niacinamide": "Yes",
+    "type": "mineral",
+
+    "spf": 50,
+    "pa": "PA++++",
+    "visible_light_protection": "low",
+    "water_resistant": "none",
+    "texture_finish": "natural-dewy",
+    "white_cast": 2,
+    "country": "Korea",
+    "fragrance": "none",
+
+    "filters": [
+      { "name": "Zinc Oxide", "category": "broad-spectrum" }
+    ],
+
+    "barrier_support": "5",
+
+    "safety_scores": {
+      "rosacea": { "stinging": 1, "flushing": 2, "barrier": 4 },
+      "acne": { "comedogenicity": 1, "fungal_acne": 0 },
+      "sensitive": { "fragrance": "no", "essential_oils": "no", "surfactant_strength": "low" }
+    },
+
+    "ingredients": [
+      "Water", "Zinc Oxide", "Cyclohexasiloxane", "Butyloctyl Salicylate",
+      "Niacinamide", "Rice Extract", "Rice Bran Oil", "Ceramide NP",
+      "Phytosphingosine", "Houttuynia Cordata Extract", "Sunflower Flower Extract"
+    ],
+
+    "notes": "Mineral sunscreen with ceramides and rice extracts; high barrier support."
+  },
+
+  {
+    "id": "hours-of-hur-weightless",
+    "brand": "Hours of Hur",
+    "product": "Weightless Sun Fluid",
+    "niacinamide": "No",
+    "type": "chemical",
+
+    "spf": 50,
+    "pa": "PA++++",
+    "visible_light_protection": "low",
+    "water_resistant": "none",
+    "texture_finish": "natural",
+    "white_cast": 0,
+    "country": "Korea",
+    "fragrance": "yes",
+
+    "filters": [
+      { "name": "Uvinul T150", "category": "UVB" },
+      { "name": "Mexoryl SX", "category": "UVA" },
+      { "name": "Uvinul A Plus", "category": "UVA" },
+      { "name": "Polysilicone-15", "category": "UVB" },
+      { "name": "Tinosorb S", "category": "broad-spectrum" }
+    ],
+
+    "barrier_support": "2",
+
+    "safety_scores": {
+      "rosacea": { "stinging": 2, "flushing": 3, "barrier": 2 },
+      "acne": { "comedogenicity": 1, "fungal_acne": 0 },
+      "sensitive": { "fragrance": "yes", "essential_oils": "yes", "surfactant_strength": "low" }
+    },
+
+    "ingredients": [
+      "Citrus Junos Fruit Extract", "Honey Extract", "Ethylhexyl Triazone",
+      "Terephthalylidene Dicamphor Sulfonic Acid", "Diethylamino Hydroxybenzoyl Hexyl Benzoate",
+      "Polysilicone-15", "Tinosorb S"
+    ],
+
+    "notes": "Lightweight chemical sunscreen; citrus extract makes it less rosacea-friendly."
+  },
+
+  {
+    "id": "haruharu-black-rice-moisture-airyfit",
+    "brand": "Haruharu Wonder",
+    "product": "Black Rice Moisture Airyfit Sunscreen",
+    "niacinamide": "Yes",
+    "type": "chemical",
+
+    "spf": 50,
+    "pa": "PA++++",
+    "visible_light_protection": "low",
+    "water_resistant": "none",
+    "texture_finish": "natural-dewy",
+    "white_cast": 0,
+    "country": "Korea",
+    "fragrance": "maybe",
+
+    "filters": [
+      { "name": "Uvinul T150", "category": "UVB" },
+      { "name": "Mexoryl SX", "category": "UVA" },
+      { "name": "Uvinul A Plus", "category": "UVA" },
+      { "name": "Polysilicone-15", "category": "UVB" },
+      { "name": "Tinosorb S", "category": "broad-spectrum" }
+    ],
+
+    "barrier_support": "5",
+
+    "safety_scores": {
+      "rosacea": { "stinging": 1, "flushing": 2, "barrier": 4 },
+      "acne": { "comedogenicity": 2, "fungal_acne": 0 },
+      "sensitive": { "fragrance": "maybe", "essential_oils": "no", "surfactant_strength": "low" }
+    },
+
+    "ingredients": [
+      "Water", "Dibutyl Adipate", "Propanediol", "Uvinul T150",
+      "Mexoryl SX", "Niacinamide", "Rice Extract", "Rice Bran Oil",
+      "Ceramide NP", "Phytosphingosine", "Plant Extracts"
+    ],
+
+    "notes": "Hydrating chemical sunscreen with ceramides and botanicals."
+  }
 ]
