@@ -1,129 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Sunscreen Details – The Sunscreen Lab</title>
-  <link rel="stylesheet" href="global.css">
-  <style>
-    body {
-      font-family: sans-serif;
-      max-width: 900px;
-      margin: 40px auto;
-      line-height: 1.5;
-    }
-  </style>
-</head>
+      const spfText = item.spf ? ` SPF ${item.spf}` : "";
 
-<body>
+      // Determine PA or Broad Spectrum by region
+      let specText = "";
 
-  <p><a href="all.html">← Back to All Sunscreens</a></p>
+      if (item.country) {
+        const c = item.country.toLowerCase();
 
-  <h1 id="title">Loading...</h1>
-  <div id="details"></div>
-
-  <script>
-    async function loadSunscreens() {
-      const response = await fetch("data/sunscreens.json");
-      return response.json();
-    }
-
-    // Read ?id=xxx from the URL
-    function getIdFromUrl() {
-      const params = new URLSearchParams(window.location.search);
-      return params.get("id");
-    }
-
-    function hazardColor(score) {
-      if (score == null) return "#888";
-      if (score <= 2) return "#4CAF50";
-      if (score <= 5) return "#FFC107";
-      return "#F44336";
-    }
-
-    function formatIngredientLink(ing) {
-      const urlSlug = ing
-        .toLowerCase()
-        .replace(/[^a-z0-9 ]/g, "")
-        .replace(/\s+/g, "-");
-
-      return `<a href="https://incidecoder.com/ingredients/${urlSlug}" target="_blank">${ing}</a>`;
-    }
-
-    loadSunscreens().then(all => {
-      const id = getIdFromUrl();
-      const item = all.find(s => String(s.id) === String(id));
-
-      if (!item) {
-        document.getElementById("title").innerText = "Sunscreen Not Found";
-        return;
+        if (c.includes("united states") || c.includes("usa")) {
+          specText = " Broad Spectrum (US)";
+        } 
+        else if (c.includes("eu") || c.includes("europe")) {
+          specText = " Broad Spectrum (EU)";
+        } 
+        else if (c.includes("australia") || c.includes("au")) {
+          specText = " Broad Spectrum (AU)";
+        } 
+        else if (item.pa) {
+          specText = ` ${item.pa}`;
+        }
+      } else if (item.pa) {
+        specText = ` ${item.pa}`;
       }
 
-      const spfText = item.spf ? ` SPF ${item.spf}` : "";
-const paText = item.pa ? ` ${item.pa}` : "";
-
-document.getElementById("title").innerText =
-  (item.brand ? `${item.brand} ${item.product}` : item.product)
-  + spfText
-  + paText;
-
-
-      const ingredientLinks = item.ingredients
-        ?.map(ing => formatIngredientLink(ing))
-        .join(", ") ?? "No ingredients listed.";
-
-      const ss = item.safety_scores ?? {};
-
-      const html = `
-        <div class="sunscreen-card">
-          <p><strong>SPF:</strong> ${item.spf ?? "Unknown"}</p>
-          <p><strong>PA Rating:</strong> ${item.pa ?? "Unknown"}</p>
-          <p><strong>Type:</strong> ${item.type ?? "Unknown"}</p>
-          <p><strong>Texture/Finish:</strong> ${item.texture_finish ?? "Unknown"}</p>
-          <p><strong>Country:</strong> ${item.country ?? "Unknown"}</p>
-
-          <p><strong>Niacinamide?</strong> ${item.niacinamide ?? "Unknown"}</p>
-          <p><strong>Barrier Support:</strong> ${item.barrier_support ?? "Unknown"}</p>
-          <p><strong>Fragrance:</strong> ${item.fragrance ?? "Unknown"}</p>
-          <p><strong>White Cast:</strong> ${item.white_cast ?? "Unknown"}</p>
-          <p><strong>Visible Light Protection:</strong> ${item.visible_light_protection ?? "Unknown"}</p>
-          <p><strong>Water Resistant:</strong> ${item.water_resistant ?? "Unknown"}</p>
-
-          <p><strong>Hazard Score:</strong> ${item.hazard_score ?? "N/A"}</p>
-          <div style="
-            width: 100px;
-            height: 8px;
-            border-radius: 4px;
-            background: ${hazardColor(item.hazard_score)};
-            margin-bottom: 20px;
-          "></div>
-
-          <details>
-            <summary><strong>Safety Scores</strong></summary>
-            <p><strong>Rosacea:</strong> ${JSON.stringify(ss.rosacea ?? {}, null, 2)}</p>
-            <p><strong>Acne:</strong> ${JSON.stringify(ss.acne ?? {}, null, 2)}</p>
-            <p><strong>Sensitive Skin:</strong> ${JSON.stringify(ss.sensitive ?? {}, null, 2)}</p>
-          </details>
-
-          <details>
-            <summary><strong>Ingredients</strong></summary>
-            <p>${ingredientLinks}</p>
-          </details>
-
-          <p style="margin-top: 10px;">
-            <a class="report-link"
-               href="https://github.com/kristimetz/kristimetz.github.io/issues/new?template=sunscreen-issue.md&title=Issue%20with%20sunscreen%3A%20${item.id}"
-               target="_blank">
-              📣 Report an Issue with This Sunscreen
-            </a>
-          </p>
-
-          <p><em>${item.notes ?? ""}</em></p>
-        </div>
-      `;
-
-      document.getElementById("details").innerHTML = html;
-    });
-  </script>
-
-</body>
-</html>
+      // Final title text
+      document.getElementById("title").innerText =
+        (item.brand ? `${item.brand} ${item.product}` : item.product)
+        + spfText
+        + specText;
