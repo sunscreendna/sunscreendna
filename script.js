@@ -174,6 +174,6 @@ loadSunscreens().then(all => {
   console.log("Initializing page with:", all);
 
   displayBrandList(all);   // ⭐ NEW: Build brand list
-  displaySunscreens(all);  // Show all sunscreens initially
+  displaySunscreens();  // Show all sunscreens initially
   setupSearch(all);        // Enable search
 });
