@@ -382,6 +382,35 @@ header input[type="text"] {
   color: var(--color-text-light);
   font-size: 0.95rem;
 }
+/* ------------------------------------------
+   🌞 STEP 15 — Final Spacing & Typography Polish
+   ------------------------------------------ */
+
+/* Improve spacing between sections */
+.section {
+  padding: var(--space-6) 0;
+}
+
+/* Improve heading spacing globally */
+h2 {
+  margin-bottom: var(--space-4);
+}
+
+/* Improve spacing under section descriptions, if any */
+.section p {
+  margin-bottom: var(--space-4);
+}
+
+/* Unify card grid alignment */
+.card-row {
+  justify-content: flex-start;
+}
+
+/* Softer hover transitions for consistency */
+button, .brand-pill, .card {
+  transition: all 0.2s ease;
+}
+
 
 
 
