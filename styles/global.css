@@ -195,26 +195,23 @@ header input[type="text"] {
 
 /* HERO SECTION */
 .section-hero {
-  width: 100vw;        /* full viewport width */
-  margin-left: 50%;
-  transform: translateX(-50%); /* centers the full-width block */
-  max-width: none;      /* override body limits */
+  padding: var(--space-6) 0;
   padding-left: var(--space-5);
   padding-right: var(--space-5);
-  padding: var(--space-6) 0;
 
-  /* The banner image */
+  /* Full-width override */
+  width: 100vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  max-width: none;
+
+  /* Banner image */
   background-image: url("../images/sunscreenlab_banner.png");
-
-  /* Make it behave like a proper hero banner */
-  background-size: cover;       /* fill the space */
-  background-position: left center;  /* keeps the sun on the left */
+  background-size: cover;
+  background-position: left center;
   background-repeat: no-repeat;
-
-  /* Optional: Add slight height if you want a bigger banner */
   min-height: 300px;
 
-  /* Ensure text is readable on top */
   display: flex;
   flex-direction: column;
   justify-content: center;
