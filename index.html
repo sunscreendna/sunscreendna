@@ -1,95 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>The Sunscreen Lab</title>
+  <meta charset="UTF-8" />
+  <title>The Sunscreen Lab – Wireframe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
-    /* Brand list styling */
-    .brand-list {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
+    /* Basic wireframe styling – NOT final design */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      max-width: 900px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #eee;
+      padding: 15px;
       margin-bottom: 20px;
     }
 
-    .brand-list a {
-      text-decoration: none;
-      color: #0057b7;
-      font-weight: 600;
-    }
-
-    .brand-list a:hover {
-      text-decoration: underline;
-    }
-
-    /* Top menu */
-    #top-menu {
-      padding: 10px;
-      background: #f4f4f4;
+    .nav-row {
       display: flex;
       gap: 10px;
+      flex-wrap: wrap;
     }
 
-    /* Turn links into button-looking elements */
-    .menu-link {
-      background: #e0e0e0;
+    .nav-row input, .nav-row button {
+      padding: 10px;
+      font-size: 14px;
+    }
+
+    .section {
+      padding: 20px 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .placeholder-box {
+      border: 2px dashed #bbb;
+      padding: 20px;
+      margin-top: 10px;
+      text-align: center;
+      color: #666;
+    }
+
+    /* Brand styling */
+    .brand-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .brand-pill {
       padding: 8px 12px;
-      border-radius: 5px;
-      text-decoration: none;
-      display: inline-block;
-      color: black;
-      font-weight: 600;
-    }
-
-    .menu-link:hover {
-      background: #d2d2d2;
-    }
-
-    /* Placeholder box for quiz */
-    .quiz-placeholder {
-      margin-top: 25px;
-      margin-bottom: 35px;
-      padding: 18px 20px;
-      background: #fafafa;
-      border-left: 4px solid #0057b7;
+      border: 1px solid #ccc;
       border-radius: 6px;
+      background: #f9f9f9;
+      font-size: 14px;
+      cursor: pointer;
     }
 
-    .quiz-placeholder h2 {
-      margin: 0 0 8px;
-      font-size: 1.4em;
+    /* Cards for Top Picks */
+    .card-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      border: 1px solid #ccc;
+      padding: 15px;
+      width: 180px;
+      text-align: center;
+      background: #fafafa;
     }
   </style>
 </head>
 
 <body>
 
-  <div id="top-menu">
-    <input type="text" placeholder="Search Sunscreens" style="flex: 1; padding: 8px;">
-    <button>Filters</button>
-    <a class="menu-link" href="all.html">Explore Sunscreens</a>
-    <a class="menu-link" href="add.html">Add a Sunscreen</a>
-  </div>
+  <!-- TOP NAV BAR -->
+  <header>
+    <div class="nav-row">
+      <input type="text" placeholder="Search Sunscreens…" id="mainSearch">
+      <button id="openFilters">Filters</button>
+      <button onclick="location.href='all.html'">Explore Sunscreens</button>
+      <button onclick="location.href='add.html'">Add a Sunscreen</button>
+    </div>
+  </header>
 
-  <h1>Welcome to the Sunscreen Lab</h1>
+  <!-- HERO SECTION -->
+  <section class="section">
+    <h1>The Sunscreen Lab</h1>
+    <p>Evidence-based data on sunscreen ingredients, filters, safety & performance.</p>
 
-  <!-- Sunscreen quiz placeholder -->
-  <div class="quiz-placeholder">
-    <h2>Find My Sunscreen <small>(coming soon)</small></h2>
-    <p>A quick personalized quiz will appear here to recommend sunscreens based on your skin type, needs, and preferences.</p>
-  </div>
+    <div class="placeholder-box">
+      (Hero area — optional banner / visuals can go here)
+    </div>
+  </section>
 
-  <!-- Browse by brand -->
-  <h2>Browse by Brand 
-    <small>(or <a href="all.html">list all sunscreens</a>)</small>
-  </h2>
+  <!-- SEARCH SECTION -->
+  <section class="section">
+    <h2>Search for a Sunscreen</h2>
 
-  <div id="brand-list" class="brand-list"></div>
+    <input type="text" placeholder="Search by keyword…" style="width: 100%; padding: 10px; font-size: 16px;">
+    <button style="margin-top: 10px;">Open Filters</button>
 
-  <div id="results"></div>
+    <div class="placeholder-box">
+      (Filters overlay will appear here)
+    </div>
+  </section>
 
-  <script src="script.js"></script>
+  <!-- BROWSE BY BRAND (WITH TOP BRANDS + EXPANDABLE FULL LIST) -->
+  <section class="section">
+    <h2>Browse by Brand</h2>
+
+    <!-- Short list of MOST COMMON brands -->
+    <div id="topBrandGrid" class="brand-grid">
+      <div class="brand-pill">Loading...</div>
+    </div>
+
+    <!-- Button to show all -->
+    <button id="showAllBrandsBtn" style="margin-top: 15px;">
+      Show All Brands
+    </button>
+
+    <!-- Full brand list (hidden initially) -->
+    <div id="allBrandGrid" class="brand-grid" style="display:none; margin-top:20px;">
+      <!-- Full list appears here -->
+    </div>
+  </section>
+
+  <!-- TOP RECOMMENDED SUNSCREENS -->
+  <section class="section">
+    <h2>Top Recommended Sunscreens</h2>
+
+    <div class="card-row">
+      <div class="card">Top Pick #1<br>(placeholder)</div>
+      <div class="card">Top Pick #2<br>(placeholder)</div>
+      <div class="card">Top Pick #3<br>(placeholder)</div>
+      <div class="card">Top Pick #4<br>(placeholder)</div>
+    </div>
+
+    <div class="placeholder-box">
+      (Eventually: dynamically generated recommendations)
+    </div>
+  </section>
+
+  <!-- SUNSCREEN RECOMMENDER PLACEHOLDER -->
+  <section class="section">
+    <h2>Sunscreen Recommender (Coming Soon)</h2>
+
+    <div class="placeholder-box">
+      Answer a few questions → get personalized sunscreen recommendations.<br>
+      (Future feature here)
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section class="section">
+    <h2>About The Sunscreen Lab</h2>
+
+    <p>
+      The Sunscreen Lab is an independent data-driven project focused on analyzing sunscreen ingredients,
+      filter combinations, safety profiles, and performance characteristics. Our mission is to provide 
+      science-backed transparency for all skin types — especially sensitive and rosacea-prone skin.
+    </p>
+
+    <div class="placeholder-box">
+      (Optional: UV filter guide, ingredient glossary, etc.)
+    </div>
+  </section>
+
+  <footer style="text-align:center; padding:30px; color:#666;">
+    © 2025 The Sunscreen Lab
+  </footer>
+
+  <!-- BRAND LOADING SCRIPT -->
+  <script>
+    async function loadBrands() {
+      const response = await fetch("data/sunscreens.json");
+      const data = await response.json();
+
+      // Count brands
+      const brandCounts = {};
+      data.forEach(item => {
+        const b = item.brand.trim();
+        brandCounts[b] = (brandCounts[b] || 0) + 1;
+      });
+
+      const brands = Object.keys(brandCounts);
+
+      // Sort by most common
+      const sortedByCount = [...brands].sort((a, b) => brandCounts[b] - brandCounts[a]);
+
+      // Top 6 brands
+      const topBrands = sortedByCount.slice(0, 6);
+
+      // Fill top brands
+      const topGrid = document.getElementById("topBrandGrid");
+      topGrid.innerHTML = "";
+      topBrands.forEach(b => {
+        const div = document.createElement("div");
+        div.className = "brand-pill";
+        div.textContent = b;
+        topGrid.appendChild(div);
+      });
+
+      // Full A–Z list
+      const sortedAZ = [...brands].sort();
+      const allGrid = document.getElementById("allBrandGrid");
+      allGrid.innerHTML = "";
+      sortedAZ.forEach(b => {
+        const div = document.createElement("div");
+        div.className = "brand-pill";
+        div.textContent = b;
+        allGrid.appendChild(div);
+      });
+    }
+
+    // Expand/collapse button
+    document.getElementById("showAllBrandsBtn").addEventListener("click", () => {
+      const fullList = document.getElementById("allBrandGrid");
+      const btn = document.getElementById("showAllBrandsBtn");
+
+      if (fullList.style.display === "none") {
+        fullList.style.display = "flex";
+        btn.textContent = "Hide All Brands";
+      } else {
+        fullList.style.display = "none";
+        btn.textContent = "Show All Brands";
+      }
+    });
+
+    loadBrands();
+  </script>
 
 </body>
 </html>
