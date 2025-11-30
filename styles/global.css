@@ -291,6 +291,61 @@ header input[type="text"] {
   font-size: 0.9rem;
   border-radius: 6px;
 }
+/* ------------------------------------------
+   🌞 STEP 12 — Enhanced Top Recommended Cards
+   ------------------------------------------ */
+
+/* Section wrapper */
+.section-top-picks {
+  padding: var(--space-6) 0;
+}
+
+/* Heading */
+.section-top-picks h2 {
+  margin-bottom: var(--space-4);
+}
+
+/* Card container */
+.card-row {
+  display: flex;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-4);
+}
+
+/* Individual cards */
+.card {
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-alt);
+  padding: var(--space-4);
+  border-radius: 10px;
+  width: 180px;
+  text-align: left;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  transform: translateY(-3px);
+}
+
+.card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: var(--space-2);
+}
+
+.card-subtitle {
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+  margin-bottom: var(--space-2);
+}
+
+.card-placeholder {
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+}
 
 
 
