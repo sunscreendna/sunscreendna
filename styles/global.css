@@ -135,7 +135,7 @@ header button:hover {
   height: 180px;   /* Adjust to control how much of the top shows */
   padding: 0;
 
-  background-image: url("../images/sunscreenlab_banner.png");
+  background-image: url("../images/Cropped_sunscreenlab_banner.png");
   background-size: cover;            /* Fills width without shrinking */
   background-position: top center;   /* Show the TOP portion */
   background-repeat: no-repeat;
