@@ -89,3 +89,42 @@ a:hover {
     font-size: 1.3rem;
   }
 }
+/* Dropdown container */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown trigger button */
+.dropdown-btn {
+  cursor: pointer;
+}
+
+/* Dropdown menu */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 180px;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+  border: 1px solid #ccc;
+  z-index: 999;
+  border-radius: 4px;
+}
+
+/* Dropdown links */
+.dropdown-content a {
+  display: block;
+  padding: 10px 14px;
+  text-decoration: none;
+  color: #333;
+}
+
+.dropdown-content a:hover {
+  background-color: #f0f0f0;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
