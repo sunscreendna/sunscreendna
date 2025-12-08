@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <title>Add a Sunscreen – The Sunscreen Lab</title>
-    <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="icon" type="image/png" href="images/favicon.png">
   <link rel="stylesheet" href="global.css">
+
   <style>
     body {
       font-family: sans-serif;
@@ -45,31 +46,6 @@
     }
   </style>
 </head>
-<script>
-document.getElementById("submitBtn").addEventListener("click", async () => {
-  const payload = {
-    brand: document.getElementById("brand").value,
-    name: document.getElementById("name").value,
-    spf: document.getElementById("spf").value,
-    filters: document.getElementById("filters").value,
-    notes: document.getElementById("notes").value
-  };
-
-  try {
-    const response = await fetch("https://benevolent-snickerdoodle-a07ed6.netlify.app/.netlify/functions/createSubmission", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload)
-    });
-
-    const result = await response.json();
-    alert(result.message);
-
-  } catch (err) {
-    alert("There was an error submitting the sunscreen. Please try again.");
-  }
-});
-</script>
 
 <body>
 
@@ -94,14 +70,37 @@ document.getElementById("submitBtn").addEventListener("click", async () => {
     <label for="photo">Product / Ingredients Photo (optional)</label>
     <input type="file" id="photo" name="photo" accept="image/*">
 
-    <button type="submit">Submit Sunscreen</button>
+    <button type="submit" id="submitBtn">Submit Sunscreen</button>
 
   </form>
 
+  <!-- Corrected JavaScript submission handler -->
   <script>
-    document.getElementById("sunscreenForm").addEventListener("submit", function(event) {
+    document.getElementById("sunscreenForm").addEventListener("submit", async function(event) {
       event.preventDefault();
-      alert("Submission feature coming soon!");
+
+      const payload = {
+        brand: document.getElementById("brand").value,
+        name: document.getElementById("name").value,
+        ingredients: document.getElementById("ingredients").value
+      };
+
+      try {
+        const response = await fetch("https://benevolent-snickerdoodle-a07ed6.netlify.app/.netlify/functions/createSubmission", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+
+        const result = await response.json();
+        alert(result.message);
+
+        // Clear the form after submit
+        document.getElementById("sunscreenForm").reset();
+
+      } catch (err) {
+        alert("There was an error submitting the sunscreen. Please try again.");
+      }
     });
   </script>
 
