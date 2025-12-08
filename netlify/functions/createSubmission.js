@@ -14,7 +14,7 @@ Submitted from: Add a Sunscreen form
     `;
 
     const response = await fetch(
-      "https://api.github.com/repos/sunscreenlab/sunscreenlab.github.io/issues",
+      "https://api.github.com/repos/sunscreenlab/sunscreenlab/issues",
       {
         method: "POST",
         headers: {
