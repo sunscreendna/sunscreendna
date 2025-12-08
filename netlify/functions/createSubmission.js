@@ -1,6 +1,6 @@
-import fetch from "node-fetch";
+const fetch = require("node-fetch");
 
-export async function handler(event, context) {
+exports.handler = async function(event, context) {
   try {
     const body = JSON.parse(event.body);
 
@@ -16,17 +16,18 @@ Submitted from: Add a Sunscreen form
     `;
 
     const response = await fetch(
-https://api.github.com/repos/sunscreenlab/sunscreenlab.github.io/issues
+      "https://api.github.com/repos/sunscreenlab/sunscreenlab.github.io/issues",
       {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           "Authorization": `Bearer ${process.env.GITHUB_TOKEN}`,
+          "User-Agent": "NetlifyFunction"
         },
         body: JSON.stringify({
           title: issueTitle,
-          body: issueBody,
-        }),
+          body: issueBody
+        })
       }
     );
 
@@ -34,19 +35,22 @@ https://api.github.com/repos/sunscreenlab/sunscreenlab.github.io/issues
       const text = await response.text();
       return {
         statusCode: 500,
-        body: JSON.stringify({ message: "Failed to create issue", details: text }),
+        body: JSON.stringify({ message: "Failed to create issue", details: text })
       };
     }
 
     return {
       statusCode: 200,
-      body: JSON.stringify({ message: "Submission received! Thank you." }),
+      body: JSON.stringify({ message: "Submission received! Thank you." })
     };
 
   } catch (err) {
     return {
       statusCode: 500,
-      body: JSON.stringify({ message: "Error processing submission", error: err.message }),
+      body: JSON.stringify({
+        message: "Error processing submission",
+        error: err.message
+      })
     };
   }
-}
+};
