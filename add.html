@@ -84,6 +84,9 @@
         name: document.getElementById("name").value,
         ingredients: document.getElementById("ingredients").value
       };
+      console.log("Submit handler running");
+      console.log("Payload:", payload);
+
 
       try {
         const response = await fetch("https://benevolent-snickerdoodle-a07ed6.netlify.app/.netlify/functions/createSubmission", {
