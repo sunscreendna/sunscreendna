@@ -83,12 +83,10 @@
         specText = ` ${item.pa}`;
       }
 
-      // Final title text
       document.getElementById("title").innerText =
         (item.brand ? `${item.brand} ${item.product}` : item.product)
         + spfText
         + specText;
-      // -----------------------------
 
       const ingredientLinks = item.ingredients
         ?.map(ing => formatIngredientLink(ing))
@@ -134,8 +132,8 @@
 
           <p style="margin-top: 10px;">
             <a class="report-link"
-               href="https://github.com/kristimetz/kristimetz.github.io/issues/new?template=sunscreen-issue.md&title=Issue%20with%20sunscreen%3A%20${item.id}"
-               target="_blank">
+               href="#"
+               onclick="submitSunscreenIssue('${item.id}', '${(item.brand ?? "").replace(/'/g, "\\'")}', '${(item.product ?? "").replace(/'/g, "\\'")}'); return false;">
               📣 Report an Issue with This Sunscreen
             </a>
           </p>
@@ -146,6 +144,50 @@
 
       document.getElementById("details").innerHTML = html;
     });
+
+    // ---------------------------------------------------------
+    // AUTO-GITHUB ISSUE CREATION FUNCTION (RESTORED)
+    // ---------------------------------------------------------
+    async function submitSunscreenIssue(id, brand, product) {
+      const issueTitle = `Issue with sunscreen: ${brand} ${product}`;
+      const issueBody = `
+A user reported a problem with this sunscreen entry.
+
+**ID:** ${id}
+**Brand:** ${brand}
+**Product:** ${product}
+**URL:** ${window.location.href}
+
+Please review and correct the sunscreen data.
+      `.trim();
+
+      const payload = {
+        title: issueTitle,
+        body: issueBody,
+        labels: ["sunscreen-issue"]   // 👈 your requested label
+      };
+
+      try {
+        const response = await fetch("/.netlify/functions/createIssue", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+          alert("Thanks! Your report has been submitted.");
+        } else {
+          console.error("Issue creation failed:", result);
+          alert("Something went wrong while submitting the issue.");
+        }
+
+      } catch (error) {
+        console.error("Network error:", error);
+        alert("Unable to submit issue — check console for details.");
+      }
+    }
   </script>
 
 </body>
