@@ -82,7 +82,7 @@
       query ? `Showing results for: "${query}"` : "No search term provided.";
 
     // Load sunscreen data
-    fetch("sunscreens.json")
+    fetch("data/sunscreens.json")
       .then(res => res.json())
       .then(data => {
 
