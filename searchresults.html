@@ -57,7 +57,6 @@
       text-decoration: underline;
     }
 
-    /* Optional highlight for matched text */
     mark {
       background: #fff3b0;
       padding: 2px 3px;
@@ -81,19 +80,17 @@
     document.getElementById("search-summary").textContent =
       query ? `Showing results for: "${query}"` : "No search term provided.";
 
-    // Load sunscreen data
-    fetch("data/sunscreens.json")
+    // Load sunscreen data - FIXED PATH
+    fetch("/sunscreenlab/data/sunscreens.json")
       .then(res => res.json())
       .then(data => {
 
-        // Preprocess data for Fuse.js
         const processed = data.map(item => ({
           ...item,
           filter_names: item.filters?.map(f => f.name) || [],
           ingredient_text: item.ingredients?.join(" ") || ""
         }));
 
-        // Configure Fuse.js
         const fuse = new Fuse(processed, {
           includeScore: true,
           includeMatches: true,
@@ -109,7 +106,6 @@
           ]
         });
 
-        // Run search
         const results = query ? fuse.search(query) : [];
         const container = document.getElementById("results");
 
@@ -123,7 +119,6 @@
           return;
         }
 
-        // Highlight matched text (optional but nice)
         function highlight(text, matches, field) {
           if (!matches) return text;
 
@@ -140,7 +135,6 @@
           return result;
         }
 
-        // Render results
         container.innerHTML = results
           .map(r => {
             const item = r.item;
