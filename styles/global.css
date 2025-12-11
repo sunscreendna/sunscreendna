@@ -64,7 +64,7 @@ h2 {
   font-size: 1.4rem;
 }
 
-/* 6. Button styling */
+/* 6. Base Button Styling (for regular buttons) */
 button {
   padding: var(--space-2) var(--space-4);
   background: var(--color-accent);
@@ -92,7 +92,7 @@ input[type="text"] {
 }
 
 /* ------------------------------------------
-   🌞 Navigation Bar
+   🌞 Navigation Bar — FIXED + UNIFIED HEIGHT
 ------------------------------------------- */
 
 header {
@@ -107,9 +107,63 @@ header {
 
 .nav-row {
   display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-3);
   align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+}
+
+/* Unified nav sizing for all elements */
+.nav-row button,
+.nav-row .dropdown-btn,
+.nav-row .menu-link {
+  font-size: 16px;
+  height: 42px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  border-radius: 6px;
+  border: 1px solid var(--color-border);
+  background: white;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.nav-row .menu-link:hover,
+.nav-row .dropdown-btn:hover,
+.nav-row button:hover {
+  background: var(--color-bg-alt);
+}
+
+/* Search bar — resized to match button height */
+.search-bar {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  height: 42px;
+  overflow: hidden;
+}
+
+.search-bar input {
+  border: none;
+  padding: 10px 12px;
+  font-size: 16px;
+  height: 100%;
+}
+
+.search-bar button {
+  border: none;
+  background: var(--color-accent);
+  padding: 0 12px;
+  font-size: 18px;
+  color: white;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.search-bar button:hover {
+  background: #076fcc;
 }
 
 /* ------------------------------------------
@@ -166,37 +220,6 @@ header {
   gap: var(--space-3);
   align-items: center;
   margin-bottom: var(--space-4);
-}
-
-/* CLEAN, SINGLE VERSION OF SEARCH BAR */
-.search-bar {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin: 20px 0;
-}
-
-.search-bar input {
-  flex: 1;
-  padding: 10px 12px;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-}
-
-.search-bar button {
-  background: var(--color-accent);
-  border: none;
-  padding: 10px 14px;
-  font-size: 1.1rem;
-  color: white;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.2s ease;
-}
-
-.search-bar button:hover {
-  background: #076fcc;
 }
 
 /* ------------------------------------------
