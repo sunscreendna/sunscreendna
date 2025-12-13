@@ -15,11 +15,11 @@
   --font-main: "Inter", "Segoe UI", Arial, sans-serif;
 
   /* Palette #2 — Dermatology Professional */
-  --color-bg: #EAE4DB;          /* sand beige */
-  --color-bg-alt: #F7F4EF;      /* lighter beige */
-  --color-border: #CFC8BF;      /* soft warm-neutral border */
-  --color-text: #1A1A1A;        /* primary text */
-  --color-text-light: #6B6763;  /* muted taupe-grey */
+  --color-bg: #EAE4DB;
+  --color-bg-alt: #F7F4EF;
+  --color-border: #CFC8BF;
+  --color-text: #1A1A1A;
+  --color-text-light: #6B6763;
 
   /* Action / Interactive — Scientific Blue */
   --color-action: #2F6F9F;
@@ -95,7 +95,7 @@ input[type="text"] {
 }
 
 /* ------------------------------------------
-   🌞 Navigation Bar — FIXED + UNIFIED HEIGHT
+   🌞 Navigation Bar
 ------------------------------------------- */
 
 header {
@@ -115,7 +115,6 @@ header {
   padding: 12px 20px;
 }
 
-/* Unified nav sizing */
 .nav-row button,
 .nav-row .dropdown-btn,
 .nav-row .menu-link {
@@ -137,7 +136,10 @@ header {
   background: var(--color-bg-alt);
 }
 
-/* Search Bar */
+/* ------------------------------------------
+   🌞 Search Bar
+------------------------------------------- */
+
 .search-bar {
   display: flex;
   align-items: center;
@@ -159,18 +161,30 @@ header {
   background: var(--color-action);
   padding: 0 12px;
   font-size: 18px;
-  color: white;
   height: 100%;
   display: flex;
   align-items: center;
+  justify-content: center;
+
+  /* 👇 improves icon visibility */
+  color: #FFFFFF;
+  font-weight: 700;
 }
 
 .search-bar button:hover {
   background: var(--color-action-hover);
 }
 
+/* Defensive icon targeting — works for SVG, icon fonts, emoji */
+.search-bar button svg,
+.search-bar button i {
+  fill: #FFFFFF;
+  color: #FFFFFF;
+  opacity: 0.95;
+}
+
 /* ------------------------------------------
-   🌞 Hero Banner (full-width)
+   🌞 Hero Banner
 ------------------------------------------- */
 
 .section-hero {
@@ -181,73 +195,17 @@ header {
   margin-left: -50vw;
   margin-right: -50vw;
   height: 180px;
-
-  background-image: url("../images/Cropped_sunscreenlabbanner.png");
   background-size: cover;
   background-position: top center;
   background-repeat: no-repeat;
-
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
 }
 
-.section-hero-text {
-  padding: var(--space-5);
-  padding-bottom: var(--space-6);
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.section-hero-text h1 {
-  font-size: 2rem;
-  font-weight: 700;
-}
-
-.section-hero-text p {
-  font-size: 1.1rem;
-  color: var(--color-text-light);
-}
-
-/* ------------------------------------------
-   🌞 Search Section
-------------------------------------------- */
-
-.section-search {
-  padding: var(--space-6) 0;
-}
-
-.search-bar-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-3);
-  align-items: center;
-  margin-bottom: var(--space-4);
-}
-
 /* ------------------------------------------
    🌞 Browse By Brand
 ------------------------------------------- */
-
-.section-brands {
-  padding: var(--space-6) 0;
-}
-
-.brand-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-2);
-  margin-top: var(--space-2);
-}
-
-.brand-pill {
-  padding: var(--space-2) var(--space-4);
-  background: var(--color-bg-alt);
-  border-radius: 6px;
-  border: 1px solid var(--color-border);
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
 
 .brand-pill:hover {
   background: var(--color-action-soft);
@@ -255,103 +213,8 @@ header {
 }
 
 /* ------------------------------------------
-   🌞 Top Picks Cards
+   🌞 Legacy Links
 ------------------------------------------- */
-
-.card-row {
-  display: flex;
-  gap: var(--space-4);
-  flex-wrap: wrap;
-}
-
-.card {
-  border: 1px solid var(--color-border);
-  background: var(--color-bg-alt);
-  padding: var(--space-4);
-  border-radius: 10px;
-  width: 180px;
-  transition: all 0.2s ease;
-}
-
-/* ------------------------------------------
-   🌞 Recommender + About
-------------------------------------------- */
-
-.recommender-box,
-.about-box {
-  border: 1px solid var(--color-border);
-  background: var(--color-bg-alt);
-  padding: var(--space-5);
-  border-radius: 10px;
-}
-
-/* ------------------------------------------
-   🌞 Dropdown Menu
-------------------------------------------- */
-
-.dropdown { position: relative; display: inline-block; }
-.dropdown-btn { cursor: pointer; }
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background: white;
-  min-width: 180px;
-  box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
-  border: 1px solid var(--color-border);
-  border-radius: 4px;
-  z-index: 999;
-}
-
-.dropdown-content a {
-  display: block;
-  padding: 10px 14px;
-  color: var(--color-text);
-  text-decoration: none;
-}
-
-.dropdown-content a:hover {
-  background: var(--color-bg-alt);
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-/* ------------------------------------------
-   🌞 Legacy Homepage Support (Updated)
-------------------------------------------- */
-
-#top-menu {
-  padding: 10px;
-  background: var(--color-bg-alt);
-  display: flex;
-  gap: 10px;
-  border-bottom: 1px solid var(--color-border);
-}
-
-.menu-link {
-  background: var(--color-bg-alt);
-  padding: 8px 12px;
-  border-radius: 5px;
-  text-decoration: none;
-  color: var(--color-text);
-  font-weight: 600;
-  border: 1px solid var(--color-border);
-}
-
-.menu-link:hover {
-  background: var(--color-action-soft);
-  border-color: var(--color-action);
-  color: var(--color-text);
-}
-
-.brand-list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  margin-bottom: 20px;
-}
 
 .brand-list a {
   color: var(--color-action);
@@ -360,27 +223,10 @@ header {
 }
 
 .brand-list a:hover {
-  text-decoration: underline;
   color: var(--color-action-hover);
+  text-decoration: underline;
 }
 
 .quiz-placeholder {
-  margin: 25px 0 35px;
-  padding: 18px 20px;
-  background: var(--color-bg-alt);
   border-left: 4px solid var(--color-action);
-  border-radius: 6px;
-  color: var(--color-text);
-}
-
-.quiz-placeholder h2 {
-  margin-bottom: 8px;
-  font-size: 1.4em;
-  color: var(--color-text);
-}
-
-.site-banner img {
-  width: 100%;
-  height: auto;
-  display: block;
 }
