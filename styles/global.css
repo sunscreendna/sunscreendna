@@ -321,14 +321,30 @@ header {
   border-left: 4px solid var(--color-action);
   border-radius: 6px;
 }
+
+/* ----------------------------------------------------------
+   12. Search Results
+---------------------------------------------------------- */
+
 .result-title a {
-  color: var(--color-text);
+  color: var(--color-accent);
   text-decoration: none;
+  font-weight: 700;
 }
 
 .result-title a:hover {
   text-decoration: underline;
-  color: var(--color-accent);
+}
+
+.result-title a:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+.result-title a::after {
+  content: " ↗";
+  font-weight: normal;
+  font-size: 0.9em;
+  opacity: 0.6;
 }
 
 .result-card {
