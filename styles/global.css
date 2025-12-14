@@ -29,7 +29,7 @@
   --color-action: #2F6F9F;
   --color-action-hover: #245A80;
   --color-action-soft: #E5F0F8;
-  --color-action-primary: E9E3DA; /* softened primary for search */
+  --color-action-primary: #E9E3DA; /* softened primary for search */
 
   /* Spacing scale */
   --space-1: 4px;
