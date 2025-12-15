@@ -280,8 +280,9 @@ header {
 }
 
 .site-logo {
-  height: 120px;
+  height: 135px;
   width: auto;
+  display: block;
 }
 
 /* ----------------------------------------------------------
