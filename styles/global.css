@@ -112,6 +112,7 @@ button:hover {
     #FBF5EC 0%,
     #F7F4EF 55%,
     #F2EDE6 100%
+    line-height: normal;
   );
 }
 
@@ -119,6 +120,7 @@ button:hover {
   display: flex;
   align-items: center;
   gap: 1rem;
+  line-height: 1;
 }
 
 header {
