@@ -178,6 +178,7 @@ header {
 }
 
 .search-bar input {
+  width: 260px;
   border: none;
   padding: 10px 12px;
   font-size: 16px;
