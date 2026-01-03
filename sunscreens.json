@@ -1,0 +1,72 @@
+[
+  {
+    "id": "anua-zero-cast-moisturizing-finish-sunscreen",
+    "brand": "Anua",
+    "product": "Zero-cast Moisturizing Finish Sunscreen",
+    "type": "chemical",
+    "spf": 50,
+    "pa": "PA++++",
+    "korean": true,
+    "filters": [
+      {
+        "name": "diethylamino hydroxybenzoyl hexyl benzoate",
+        "category": "chemical"
+      },
+      {
+        "name": "bis-ethylhexyloxyphenol methoxyphenyl triazine",
+        "category": "chemical"
+      },
+      {
+        "name": "terephthalylidene dicamphor sulfonic acid",
+        "category": "chemical"
+      },
+      {
+        "name": "drometrizole trisiloxane",
+        "category": "chemical"
+      }
+    ],
+    "ingredients": [
+      "shell\nWater",
+      "Dibutyl Adipate",
+      "Propanediol",
+      "Butyloctyl Salicylate",
+      "Ethylhexyl Triazone",
+      "Niacinamide",
+      "Caprylyl Methicone",
+      "Drometrizole Trisiloxane",
+      "Terephthalylidene Dicamphor Sulfonic Acid",
+      "Polyglyceryl-3 Distearate",
+      "1",
+      "2-Hexanediol",
+      "Diethylamino Hydroxybenzoyl Hexyl Benzoate",
+      "Tromethamine",
+      "Glycerin",
+      "Pentylene Glycol",
+      "Cetearyl Alcohol",
+      "Polymethylsilsesquioxane",
+      "Bis-Ethylhexyloxyphenol Methoxyphenyl Triazine",
+      "Glyceryl Stearate",
+      "Potassium Cetyl Phosphate",
+      "Poly C10-30 Alkyl Acrylate",
+      "Methylpropanediol",
+      "Carbomer",
+      "Polyglyceryl-3 Methylglucose Distearate",
+      "Ethylhexylglycerin",
+      "Glyceryl Stearate Citrate",
+      "Ammonium Acryloyldimethyltaurate/VP Copolymer",
+      "Panthenol",
+      "Dimethicone/Vinyl Dimethicone Crosspolymer",
+      "Acrylates/C10-30 Alkyl Acrylate Crosspolymer",
+      "Dimethiconol",
+      "Trisiloxane",
+      "Adenosine",
+      "Polyether-1",
+      "Sodium Hyaluronate",
+      "Beta-Glucan",
+      "Biosaccharide Gum-1",
+      "Tocopherol"
+    ],
+    "source_url": "https://oliveyoung.com/product/detail?prdtNo=GA251034676",
+    "notes": "_No response_"
+  }
+]
