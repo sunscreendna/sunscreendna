@@ -183,10 +183,14 @@ if (process.env.ISSUE_BODY) {
 
     const canonical = buildCanonical(parsed);
 
-    // 🔑 EXPORT FOR NEXT STEPS
+    // 🔑 EXPORT FOR NEXT STEPS (Base64-safe)
     exportEnv("SUNSCREEN_ID", canonical.id);
     exportEnv("SUNSCREEN_BRAND", canonical.brand);
     exportEnv("SUNSCREEN_PRODUCT", canonical.product);
+    exportEnv(
+      "SUNSCREEN_CANONICAL_JSON",
+      Buffer.from(JSON.stringify(canonical)).toString("base64")
+    );
 
     console.log("🧪 Canonical sunscreen object (dry run):");
     console.log(JSON.stringify(canonical, null, 2));
@@ -195,6 +199,7 @@ if (process.env.ISSUE_BODY) {
     console.log(`SUNSCREEN_ID=${canonical.id}`);
     console.log(`SUNSCREEN_BRAND=${canonical.brand}`);
     console.log(`SUNSCREEN_PRODUCT=${canonical.product}`);
+    console.log("SUNSCREEN_CANONICAL_JSON=<base64>");
   } catch (err) {
     console.error("❌ Parsing failed:", err.message);
     process.exit(1);
