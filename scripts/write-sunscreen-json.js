@@ -62,7 +62,7 @@ function mergeIngredientTokens(ingredients) {
       /^[\d\-]/.test(next)
     ) {
       merged.push(`${current},${next}`);
-      i++; // skip next
+      i++;
       continue;
     }
 
@@ -88,16 +88,16 @@ if (Array.isArray(canonical.ingredients)) {
 }
 
 // ----------------------------
-// SANITIZE SUNSCREEN
+// SANITIZE SUNSCREEN (PURE)
 // ----------------------------
 
 let sanitized;
-let warnings;
+let warnings = [];
 
 try {
   const result = sanitizeSunscreen(canonical);
   sanitized = result.sunscreen;
-  warnings = result.warnings;
+  warnings = result.warnings ?? [];
 } catch (err) {
   console.error("❌ Sanitization failed:", err.message);
   process.exit(1);
@@ -115,6 +115,29 @@ if (!ALLOWED_TYPES.includes(sanitized.type)) {
     `Allowed values: ${ALLOWED_TYPES.join(", ")}`
   );
   process.exit(1);
+}
+
+// ----------------------------
+// EXPORT WARNINGS FOR WORKFLOW
+// ----------------------------
+
+if (process.env.GITHUB_OUTPUT) {
+  fs.appendFileSync(
+    process.env.GITHUB_OUTPUT,
+    `sanitizer_warnings=${Buffer.from(
+      JSON.stringify(warnings)
+    ).toString("base64")}\n`
+  );
+}
+
+// ----------------------------
+// DRY RUN SUPPORT (NO SIDE EFFECTS)
+// ----------------------------
+
+if (DRY_RUN) {
+  console.log("🧪 DRY RUN MODE ENABLED");
+  console.log(JSON.stringify(sanitized, null, 2));
+  process.exit(0);
 }
 
 // ----------------------------
@@ -137,6 +160,7 @@ let data = [];
 if (fs.existsSync(DATA_FILE)) {
   try {
     data = JSON.parse(fs.readFileSync(DATA_FILE, "utf-8"));
+
     if (!Array.isArray(data)) {
       throw new Error("sunscreens.json is not an array");
     }
@@ -156,27 +180,6 @@ if (data.some(item => item.id === SUNSCREEN_ID)) {
     `An entry with id "${SUNSCREEN_ID}" already exists.`
   );
   process.exit(1);
-}
-
-// ----------------------------
-// WARNINGS SUMMARY
-// ----------------------------
-
-if (warnings.length > 0) {
-  console.log("⚠️ Sanitizer warnings:");
-  for (const w of warnings) {
-    console.log(" -", JSON.stringify(w));
-  }
-}
-
-// ----------------------------
-// DRY RUN SUPPORT
-// ----------------------------
-
-if (DRY_RUN) {
-  console.log("🧪 DRY RUN MODE ENABLED");
-  console.log(JSON.stringify(sanitized, null, 2));
-  process.exit(0);
 }
 
 // ----------------------------
