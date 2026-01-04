@@ -1,7 +1,7 @@
 // sanitize-sunscreen.js
 // Pure sanitation + detection logic for sunscreen submissions
 
-import { UV_FILTERS, UV_FILTER_IGNORE } from "./uv-filters.js";
+import { UV_FILTERS, UV_FILTER_IGNORE } from "./shared/uv-filters.js";
 import { fileURLToPath } from "url";
 
 /**
