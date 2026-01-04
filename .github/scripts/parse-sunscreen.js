@@ -1,5 +1,6 @@
 import fs from "fs";
-import { UV_FILTERS } from "./uv-filters.js";
+import { UV_FILTERS } from "../../scripts/shared/uv-filters.js";
+
 
 /**
  * Extract the text that follows a given markdown section heading
