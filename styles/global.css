@@ -331,3 +331,35 @@ th.sorted-asc .sort-indicator::after {
 th.sorted-desc .sort-indicator::after {
   content: "▼";
 }
+
+/* ==========================================================
+   CTA WRAPPER FIX (Add a Sunscreen)
+   ========================================================== */
+
+.cta-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Prevent CTA from stretching taller than other nav items */
+.menu-link-primary {
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* Subtle explanatory note */
+.cta-note {
+  font-size: 0.7rem;
+  color: var(--color-text-light);
+  line-height: 1.2;
+}
+
+/* Mobile: make CTA note align left like other menu items */
+@media (max-width: 900px) {
+  .cta-wrapper {
+    align-items: flex-start;
+  }
+}
+
