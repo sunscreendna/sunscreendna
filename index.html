@@ -12,118 +12,70 @@
 
 <body>
 
-  <!-- ==========================================
-       SITE HEADER (Logo + Navigation)
-       ========================================== -->
-  <header class="site-header">
-    <div class="header-inner">
+<header class="site-header">
+  <div class="header-inner">
 
-      <!-- LOGO -->
-      <img
-        src="images/sunscreen-dna-logo-cropped.png"
-        alt="Sunscreen DNA"
-        class="site-logo"
-      >
+    <img
+      src="images/sunscreen-dna-logo-cropped.png"
+      alt="Sunscreen DNA"
+      class="site-logo"
+    >
 
-      <!-- PRIMARY NAVIGATION -->
-      <nav class="site-nav">
+    <nav class="site-nav">
 
-        <!-- SEARCH -->
-        <form id="site-search" action="searchresults.html" method="GET" class="search-bar">
-          <input
-            type="text"
-            name="q"
-            placeholder="Search sunscreens…"
-            required
-          />
-          <button type="submit" aria-label="Search">🔍</button>
-        </form>
+      <!-- SEARCH -->
+      <form id="site-search" action="searchresults.html" method="GET" class="search-bar">
+        <input
+          type="text"
+          name="q"
+          placeholder="Search sunscreens…"
+          required
+        />
+        <button type="submit" aria-label="Search">🔍</button>
+      </form>
 
-        <!-- DROPDOWN -->
-        <div class="dropdown">
-          <button class="dropdown-btn menu-link">
-            Explore Sunscreens
-          </button>
-          <div class="dropdown-content">
-            <a href="all.html">All Sunscreens</a>
-            <a href="brands.html">By Brand</a>
-            <a href="types.html">By Filter Type</a>
-            <a href="spf.html">By SPF Range</a>
-            <a href="finish.html">By Finish</a>
-            <a href="filters.html">UV Filter Encyclopedia</a>
-          </div>
+      <!-- DROPDOWN -->
+      <div class="dropdown">
+        <button class="dropdown-btn menu-link">
+          Explore Sunscreens
+        </button>
+        <div class="dropdown-content">
+          <a href="all.html">All Sunscreens</a>
+          <a href="brands.html">By Brand</a>
+          <a href="types.html">By Filter Type</a>
+          <a href="spf.html">By SPF Range</a>
+          <a href="finish.html">By Finish</a>
+          <a href="filters.html">UV Filter Encyclopedia</a>
         </div>
+      </div>
 
-        <!-- PRIMARY CTA -->
+      <!-- PRIMARY CTA (FIXED) -->
+      <div class="cta-wrapper">
         <a
           href="https://github.com/sunscreendna/sunscreendna/issues/new?template=submit-a-sunscreen.yml"
           class="menu-link menu-link-primary"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Add a Sunscreen (requires free GitHub account)"
         >
           Add a Sunscreen
         </a>
+        <span class="cta-note">
+          Requires a free GitHub account
+        </span>
+      </div>
 
-      </nav>
+    </nav>
 
-      <!-- HAMBURGER BUTTON (hidden on desktop for now) -->
-      <button class="nav-toggle" aria-label="Open menu">
-        ☰
-      </button>
-
-    </div>
-  </header>
-
-  <!-- ==========================================
-       BROWSE BY BRAND — BRAND PILLS
-       ========================================== -->
-  <section class="section section-brands">
-    <h2>Browse by Brand</h2>
-
-    <div id="brand-pills" class="brand-grid">
-      <!-- JS will populate brand pills here -->
-    </div>
-
-    <button id="showAllBrandsBtn" style="margin-top: 16px;">
-      Show All Brands
+    <button class="nav-toggle" aria-label="Open menu">
+      ☰
     </button>
 
-    <div id="allBrandGrid" class="brand-grid" style="display:none; margin-top:16px;">
-      <!-- JS will populate full brand list -->
-    </div>
-  </section>
+  </div>
+</header>
 
-  <!-- ==========================================
-       RECOMMENDER PLACEHOLDER
-       ========================================== -->
-  <section class="section">
-    <div class="recommender-box">
-      <h2>Find My Sunscreen</h2>
-      <p>A personalized sunscreen recommender is coming soon.</p>
-    </div>
-  </section>
+<!-- Rest of your page unchanged -->
 
-  <!-- ==========================================
-       ABOUT SECTION
-       ========================================== -->
-  <section class="section">
-    <div class="about-box">
-      <h2>About the Sunscreen DNA site</h2>
-      <p>
-        Our mission is to help you navigate the complex world of modern sunscreen
-        formulations using evidence-based analysis, ingredient science, and clear
-        safety insights — so you can choose the best protection for your skin.
-      </p>
-    </div>
-  </section>
-
-  <!-- ==========================================
-       DYNAMIC OUTPUT AREA
-       ========================================== -->
-  <section class="section">
-    <div id="results"></div>
-  </section>
-
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
