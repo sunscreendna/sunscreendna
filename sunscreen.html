@@ -4,22 +4,58 @@
   <meta charset="UTF-8" />
   <title>Sunscreen Details – Sunscreen DNA</title>
   <link rel="stylesheet" href="global.css">
-  <style>
-    body {
-      font-family: sans-serif;
-      max-width: 900px;
-      margin: 40px auto;
-      line-height: 1.5;
-    }
-  </style>
 </head>
 
 <body>
 
-  <p><a href="all.html">← Back to All Sunscreens</a></p>
+  <!-- ============================= -->
+  <!-- GLOBAL SITE HEADER -->
+  <!-- ============================= -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html">
+        <img
+          src="images/sunscreen-dna-logo-cropped.png"
+          alt="Sunscreen DNA"
+          class="site-logo"
+        >
+      </a>
 
-  <h1 id="title">Loading...</h1>
-  <div id="details"></div>
+      <nav class="site-nav">
+        <a href="all.html">All Sunscreens</a>
+
+        <div class="dropdown">
+          <span class="dropdown-btn">About ▾</span>
+          <div class="dropdown-content">
+            <a href="about.html">Methodology</a>
+            <a href="filters.html">UV Filters</a>
+          </div>
+        </div>
+
+        <div class="cta-wrapper">
+          <a href="submit.html" class="menu-link-primary">Add a Sunscreen</a>
+          <span class="cta-note">Community-reviewed</span>
+        </div>
+      </nav>
+
+      <button class="nav-toggle" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- ============================= -->
+  <!-- PAGE CONTENT -->
+  <!-- ============================= -->
+  <main class="sunscreen-page">
+
+    <p class="back-link">
+      <a href="all.html">← Back to All Sunscreens</a>
+    </p>
+
+    <h1 id="title">Loading…</h1>
+
+    <div id="details"></div>
+
+  </main>
 
   <script>
     async function loadSunscreens() {
@@ -27,17 +63,9 @@
       return response.json();
     }
 
-    // Read ?id=xxx from the URL
     function getIdFromUrl() {
       const params = new URLSearchParams(window.location.search);
       return params.get("id");
-    }
-
-    function hazardColor(score) {
-      if (score == null) return "#888";
-      if (score <= 2) return "#4CAF50";
-      if (score <= 5) return "#FFC107";
-      return "#F44336";
     }
 
     function formatIngredientLink(ing) {
@@ -46,7 +74,7 @@
         .replace(/[^a-z0-9 ]/g, "")
         .replace(/\s+/g, "-");
 
-      return `<a href="https://incidecoder.com/ingredients/${urlSlug}" target="_blank">${ing}</a>`;
+      return `<a href="https://incidecoder.com/ingredients/${urlSlug}" target="_blank" rel="noopener">${ing}</a>`;
     }
 
     loadSunscreens().then(all => {
@@ -58,113 +86,68 @@
         return;
       }
 
-      // -----------------------------
-      // BUILD TITLE: BRAND PRODUCT SPF + PA/BROAD SPECTRUM
-      // -----------------------------
       const spfText = item.spf ? ` SPF ${item.spf}` : "";
-      let specText = "";
-
-      if (item.country) {
-        const c = item.country.toLowerCase();
-
-        if (c.includes("united states") || c.includes("usa")) {
-          specText = " Broad Spectrum (US)";
-        } 
-        else if (c.includes("eu") || c.includes("europe")) {
-          specText = " Broad Spectrum (EU)";
-        } 
-        else if (c.includes("australia") || c.includes("au")) {
-          specText = " Broad Spectrum (AU)";
-        } 
-        else if (item.pa) {
-          specText = ` ${item.pa}`;
-        }
-      } else if (item.pa) {
-        specText = ` ${item.pa}`;
-      }
 
       document.getElementById("title").innerText =
-        (item.brand ? `${item.brand} ${item.product}` : item.product)
-        + spfText
-        + specText;
+        `${item.brand ?? ""} ${item.product ?? ""}${spfText}`.trim();
 
-      const ingredientLinks = item.ingredients
-        ?.map(ing => formatIngredientLink(ing))
-        .join(", ") ?? "No ingredients listed.";
-
-      const ss = item.safety_scores ?? {};
+      const filterList = item.filters?.length
+        ? `<ul class="filter-list">
+            ${item.filters.map(f => `<li>${f.name}</li>`).join("")}
+          </ul>`
+        : "<p>No UV filters listed.</p>";
 
       const html = `
-        <div class="sunscreen-card">
-          <p><strong>SPF:</strong> ${item.spf ?? "Unknown"}</p>
-          <p><strong>PA Rating:</strong> ${item.pa ?? "Unknown"}</p>
-          <p><strong>Type:</strong> ${item.type ?? "Unknown"}</p>
-          <p><strong>Texture/Finish:</strong> ${item.texture_finish ?? "Unknown"}</p>
-          <p><strong>Country:</strong> ${item.country ?? "Unknown"}</p>
+        <article class="sunscreen-card">
 
-          <p><strong>Niacinamide?</strong> ${item.niacinamide ?? "Unknown"}</p>
-          <p><strong>Barrier Support:</strong> ${item.barrier_support ?? "Unknown"}</p>
-          <p><strong>Fragrance:</strong> ${item.fragrance ?? "Unknown"}</p>
-          <p><strong>White Cast:</strong> ${item.white_cast ?? "Unknown"}</p>
-          <p><strong>Visible Light Protection:</strong> ${item.visible_light_protection ?? "Unknown"}</p>
-          <p><strong>Water Resistant:</strong> ${item.water_resistant ?? "Unknown"}</p>
+          <section class="meta-grid">
+            <div><strong>Type</strong><span>${item.type ?? "Unknown"}</span></div>
+            <div><strong>SPF</strong><span>${item.spf ?? "Unknown"}</span></div>
+            <div><strong>PA</strong><span>${item.pa ?? "Not stated"}</span></div>
+          </section>
 
-          <p><strong>Hazard Score:</strong> ${item.hazard_score ?? "N/A"}</p>
-          <div style="
-            width: 100px;
-            height: 8px;
-            border-radius: 4px;
-            background: ${hazardColor(item.hazard_score)};
-            margin-bottom: 20px;
-          "></div>
+          <section class="section">
+            <h2>UV Filter System</h2>
+            ${filterList}
+          </section>
 
-          <details>
-            <summary><strong>Safety Scores</strong></summary>
-            <p><strong>Rosacea:</strong> ${JSON.stringify(ss.rosacea ?? {}, null, 2)}</p>
-            <p><strong>Acne:</strong> ${JSON.stringify(ss.acne ?? {}, null, 2)}</p>
-            <p><strong>Sensitive Skin:</strong> ${JSON.stringify(ss.sensitive ?? {}, null, 2)}</p>
-          </details>
+          ${item.notes ? `
+            <section class="section notes">
+              <h2>Notes</h2>
+              <p>${item.notes}</p>
+            </section>
+          ` : ""}
 
-          <details>
-            <summary><strong>Ingredients</strong></summary>
-            <p>${ingredientLinks}</p>
-          </details>
-
-          <p style="margin-top: 10px;">
+          <p class="report-wrapper">
             <a class="report-link"
                href="#"
-               onclick="submitSunscreenIssue('${item.id}', '${(item.brand ?? "").replace(/'/g, "\\'")}', '${(item.product ?? "").replace(/'/g, "\\'")}'); return false;">
-              📣 Report an Issue with This Sunscreen
+               onclick="submitSunscreenIssue(
+                 '${item.id}',
+                 '${(item.brand ?? "").replace(/'/g, "\\'")}',
+                 '${(item.product ?? "").replace(/'/g, "\\'")}'
+               ); return false;">
+              📣 Report an Issue with This Entry
             </a>
           </p>
 
-          <p><em>${item.notes ?? ""}</em></p>
-        </div>
+        </article>
       `;
 
       document.getElementById("details").innerHTML = html;
     });
 
-    // ---------------------------------------------------------
-    // AUTO-GITHUB ISSUE CREATION FUNCTION (RESTORED)
-    // ---------------------------------------------------------
     async function submitSunscreenIssue(id, brand, product) {
-      const issueTitle = `Issue with sunscreen: ${brand} ${product}`;
-      const issueBody = `
+      const payload = {
+        title: `Issue with sunscreen: ${brand} ${product}`,
+        body: `
 A user reported a problem with this sunscreen entry.
 
 **ID:** ${id}
 **Brand:** ${brand}
 **Product:** ${product}
 **URL:** ${window.location.href}
-
-Please review and correct the sunscreen data.
-      `.trim();
-
-      const payload = {
-        title: issueTitle,
-        body: issueBody,
-        labels: ["sunscreen-issue"]   // 👈 your requested label
+        `.trim(),
+        labels: ["sunscreen-issue"]
       };
 
       try {
@@ -174,18 +157,13 @@ Please review and correct the sunscreen data.
           body: JSON.stringify(payload)
         });
 
-        const result = await response.json();
-
         if (response.ok) {
           alert("Thanks! Your report has been submitted.");
         } else {
-          console.error("Issue creation failed:", result);
-          alert("Something went wrong while submitting the issue.");
+          alert("There was a problem submitting the report.");
         }
-
-      } catch (error) {
-        console.error("Network error:", error);
-        alert("Unable to submit issue — check console for details.");
+      } catch (err) {
+        alert("Network error while submitting report.");
       }
     }
   </script>
