@@ -363,3 +363,91 @@ th.sorted-desc .sort-indicator::after {
   }
 }
 
+/* ==========================================================
+   Sunscreen Detail Page
+   ========================================================== */
+
+.sunscreen-page {
+  padding: var(--space-6) var(--space-4);
+}
+
+.back-link {
+  margin-bottom: var(--space-4);
+}
+
+.back-link a {
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: var(--color-text-light);
+}
+
+.back-link a:hover {
+  color: var(--color-action);
+}
+
+.sunscreen-card {
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  padding: var(--space-6);
+}
+
+.meta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+}
+
+.meta-grid div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.meta-grid strong {
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+}
+
+.meta-grid span {
+  font-size: 1rem;
+}
+
+.filter-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: var(--space-3);
+}
+
+.filter-list li {
+  padding: 6px 0;
+  border-bottom: 1px dashed var(--color-border);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.95rem;
+}
+
+.filter-list li:last-child {
+  border-bottom: none;
+}
+
+.notes {
+  font-style: italic;
+  color: var(--color-text-light);
+}
+
+.report-wrapper {
+  margin-top: var(--space-5);
+}
+
+.report-link {
+  font-size: 0.9rem;
+  color: var(--color-action);
+  text-decoration: none;
+}
+
+.report-link:hover {
+  text-decoration: underline;
+}
