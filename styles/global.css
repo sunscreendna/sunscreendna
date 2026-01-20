@@ -4,7 +4,7 @@
 
 /* ----------------------------------------------------------
    1. Reset / Normalize
----------------------------------------------------------- */
+   ---------------------------------------------------------- */
 * {
   margin: 0;
   padding: 0;
@@ -13,7 +13,7 @@
 
 /* ----------------------------------------------------------
    2. Design Tokens
----------------------------------------------------------- */
+   ---------------------------------------------------------- */
 :root {
   --font-main: "Inter", "Segoe UI", Arial, sans-serif;
 
@@ -38,26 +38,70 @@
 
 /* ----------------------------------------------------------
    3. Global Base Styles
----------------------------------------------------------- */
+   ---------------------------------------------------------- */
+.page-all .search-bar {
+  display: none;
+}
+
 body {
   font-family: var(--font-main);
   background: var(--color-bg);
   color: var(--color-text);
   line-height: 1.6;
-  margin: 0;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-h1, h2, h3 {
+.section {
+  padding: var(--space-6) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+h1,
+h2,
+h3 {
   font-weight: 600;
   margin-bottom: var(--space-3);
 }
 
-h1 { font-size: 2rem; }
-h2 { font-size: 1.4rem; }
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.4rem;
+}
 
 /* ----------------------------------------------------------
-   4. Header / Navigation
----------------------------------------------------------- */
+   4. Inputs & Buttons
+   ---------------------------------------------------------- */
+input[type="text"] {
+  padding: var(--space-3);
+  border-radius: 6px;
+  border: 1px solid var(--color-border);
+  width: 100%;
+  font-size: 1rem;
+}
+
+button {
+  padding: var(--space-2) var(--space-4);
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  color: var(--color-text);
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+button:hover {
+  background: var(--color-action-soft);
+  border-color: var(--color-action);
+}
+
+/* ----------------------------------------------------------
+   5. Header / Navigation
+   ---------------------------------------------------------- */
 .site-header {
   position: sticky;
   top: 0;
@@ -68,21 +112,19 @@ h2 { font-size: 1.4rem; }
     #F7F4EF 55%,
     #F2EDE6 100%
   );
-  border-bottom: 1px solid var(--color-border);
 }
 
+/* Needed for mobile dropdown positioning */
 .header-inner {
-  max-width: 900px;
-  margin: 0 auto;
   position: relative;
   display: flex;
   align-items: center;
   gap: 1rem;
-  padding: var(--space-3) var(--space-4);
+  padding: var(--space-4);
 }
 
 .site-logo {
-  max-height: 145px;
+  height: 145px;
   width: auto;
   display: block;
 }
@@ -95,7 +137,7 @@ h2 { font-size: 1.4rem; }
   margin-left: auto;
 }
 
-/* Hamburger */
+/* Hamburger hidden by default (desktop-first) */
 .nav-toggle {
   display: none;
   background: none;
@@ -105,26 +147,75 @@ h2 { font-size: 1.4rem; }
 }
 
 /* ----------------------------------------------------------
-   5. Navigation Elements
----------------------------------------------------------- */
-.site-nav a {
+   6. Primary CTA Button
+   ---------------------------------------------------------- */
+.menu-link-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  margin-left: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
   text-decoration: none;
-  color: var(--color-text);
-  font-weight: 500;
+  color: #ffffff;
+  background-color: var(--color-action);
+  border-radius: 8px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
-.site-nav a:hover {
-  color: var(--color-action);
+.menu-link-primary:hover,
+.menu-link-primary:focus-visible {
+  background-color: var(--color-action-hover);
+  transform: translateY(-1px);
 }
 
-/* Dropdown */
+.menu-link-primary:active {
+  transform: translateY(0);
+}
+
+/* ----------------------------------------------------------
+   7. Search Bar
+   ---------------------------------------------------------- */
+.search-bar {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  height: 42px;
+  overflow: hidden;
+}
+
+.search-bar input {
+  width: 260px;
+  border: none;
+  padding: 10px 12px;
+  font-size: 16px;
+}
+
+.search-bar button {
+  border: none;
+  background: var(--color-action-primary);
+  padding: 0 14px;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.search-bar button:hover {
+  background: var(--color-action-hover);
+}
+
+/* ----------------------------------------------------------
+   8. Dropdown Menu
+   ---------------------------------------------------------- */
 .dropdown {
   position: relative;
 }
 
 .dropdown-btn {
   cursor: pointer;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .dropdown-content {
@@ -134,7 +225,7 @@ h2 { font-size: 1.4rem; }
   min-width: 220px;
   border: 1px solid var(--color-border);
   border-radius: 6px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   z-index: 1000;
 }
 
@@ -142,6 +233,7 @@ h2 { font-size: 1.4rem; }
   display: block;
   padding: 10px 14px;
   color: var(--color-text);
+  text-decoration: none;
 }
 
 .dropdown-content a:hover {
@@ -153,149 +245,44 @@ h2 { font-size: 1.4rem; }
 }
 
 /* ----------------------------------------------------------
-   6. Primary CTA Button
----------------------------------------------------------- */
-.cta-wrapper {
+   9. Cards / Brands
+   ---------------------------------------------------------- */
+.brand-grid {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
+  flex-wrap: wrap;
+  gap: var(--space-2);
 }
 
-.menu-link-primary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 18px;
-  font-size: 0.95rem;
-  font-weight: 600;
-  text-decoration: none;
-  color: #ffffff;
-  background-color: var(--color-action);
-  border-radius: 8px;
-  white-space: nowrap;
-  transition: background-color 0.2s ease, transform 0.1s ease;
-}
-
-.menu-link-primary:hover {
-  background-color: var(--color-action-hover);
-  transform: translateY(-1px);
-}
-
-.menu-link-primary:active {
-  transform: translateY(0);
-}
-
-.cta-note {
-  font-size: 0.7rem;
-  color: var(--color-text-light);
-  line-height: 1.2;
-}
-
-/* ----------------------------------------------------------
-   7. Sunscreen Detail Page
----------------------------------------------------------- */
-.sunscreen-page {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: var(--space-6) var(--space-4);
-}
-
-.back-link {
-  margin-bottom: var(--space-4);
-}
-
-.back-link a {
-  font-size: 0.9rem;
-  text-decoration: none;
-  color: var(--color-text-light);
-}
-
-.back-link a:hover {
-  color: var(--color-action);
-}
-
-.sunscreen-card {
-  background: var(--color-bg-alt);
+.brand-pill {
+  padding: var(--space-2) var(--space-4);
   border: 1px solid var(--color-border);
-  border-radius: 14px;
-  padding: var(--space-6);
-}
-
-.meta-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: var(--space-4);
-  margin-bottom: var(--space-5);
-}
-
-.meta-grid div {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.meta-grid strong {
-  font-size: 0.75rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--color-text-light);
-}
-
-.meta-grid span {
-  font-size: 1rem;
-}
-
-.filter-list {
-  list-style: none;
-  padding-left: 0;
-  margin-top: var(--space-3);
-}
-
-.filter-list li {
-  padding: 6px 0;
-  border-bottom: 1px dashed var(--color-border);
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 0.95rem;
-}
-
-.filter-list li:last-child {
-  border-bottom: none;
-}
-
-.notes {
-  font-style: italic;
-  color: var(--color-text-light);
-}
-
-.report-wrapper {
-  margin-top: var(--space-5);
-}
-
-.report-link {
-  font-size: 0.9rem;
-  color: var(--color-action);
+  border-radius: 6px;
+  background: var(--color-bg-alt);
   text-decoration: none;
+  color: var(--color-text);
 }
 
-.report-link:hover {
-  text-decoration: underline;
+.brand-pill:hover {
+  background: var(--color-action-soft);
+  border-color: var(--color-action);
 }
 
 /* ----------------------------------------------------------
-   8. Mobile Navigation
----------------------------------------------------------- */
+   10. Mobile Navigation
+   ---------------------------------------------------------- */
 @media (max-width: 900px) {
-
+  /* Hide desktop nav */
   .site-nav {
     display: none;
   }
 
+  /* Show hamburger */
   .nav-toggle {
     display: block;
     margin-left: auto;
   }
 
+  /* Open state */
   .site-nav.open {
     display: flex;
     flex-direction: column;
@@ -307,21 +294,71 @@ h2 { font-size: 1.4rem; }
     padding: var(--space-4);
     border: 1px solid var(--color-border);
     border-radius: 8px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
     z-index: 1000;
   }
 
+  /* Full-width touch targets */
   .site-nav a,
   .site-nav button {
     width: 100%;
     text-align: left;
   }
 
+  /* Dropdown behaves like normal list */
   .dropdown-content {
     position: static;
     box-shadow: none;
   }
+}
 
+/* ----------------------------------------------------------
+   Table Sorting
+   ---------------------------------------------------------- */
+th[data-sort] {
+  cursor: pointer;
+  user-select: none;
+}
+
+.sort-indicator {
+  font-size: 0.75em;
+  margin-left: 4px;
+  opacity: 0.6;
+}
+
+th.sorted-asc .sort-indicator::after {
+  content: "▲";
+}
+
+th.sorted-desc .sort-indicator::after {
+  content: "▼";
+}
+
+/* ==========================================================
+   CTA WRAPPER FIX (Add a Sunscreen)
+   ========================================================== */
+.cta-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Prevent CTA from stretching taller than other nav items */
+.menu-link-primary {
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* Subtle explanatory note */
+.cta-note {
+  font-size: 0.7rem;
+  color: var(--color-text-light);
+  line-height: 1.2;
+}
+
+/* Mobile: make CTA note align left like other menu items */
+@media (max-width: 900px) {
   .cta-wrapper {
     align-items: flex-start;
   }
