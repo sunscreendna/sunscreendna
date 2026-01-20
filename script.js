@@ -147,18 +147,43 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 //
+//  HEADER FILTER DROPDOWN TOGGLE (Step 3)
+//
+document.addEventListener("click", function (e) {
+  const toggle = e.target.closest(".filter-toggle");
+  const openDropdowns = document.querySelectorAll(".filter-dropdown:not([hidden])");
+
+  // Close open dropdowns if clicking elsewhere
+  openDropdowns.forEach(dropdown => {
+    const header = dropdown.closest(".filterable-header");
+    if (!header.contains(e.target)) {
+      dropdown.hidden = true;
+    }
+  });
+
+  if (!toggle) return;
+
+  const header = toggle.closest(".filterable-header");
+  const dropdown = header.querySelector(".filter-dropdown");
+
+  dropdown.hidden = !dropdown.hidden;
+});
+
+//
 //  INITIALIZE HOMEPAGE
 //
 loadSunscreens().then(all => {
   buildBrandPills(all);
   buildFullBrandGrid(all);
 });
+
 const navToggle = document.querySelector(".nav-toggle");
 const siteNav = document.querySelector(".site-nav");
 
 navToggle.addEventListener("click", () => {
   siteNav.classList.toggle("open");
 });
+
 function getFilterType(filters) {
   const mineral = ["Zinc Oxide", "Titanium Dioxide"];
 
