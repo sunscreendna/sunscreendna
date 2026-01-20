@@ -363,3 +363,42 @@ th.sorted-desc .sort-indicator::after {
     align-items: flex-start;
   }
 }
+
+/* ==========================================================
+   Added 1/20/26 - styling for All/Filters page
+   ========================================================== */
+
+.filterable-header {
+  position: relative;
+  white-space: nowrap;
+}
+
+.filterable-header .header-label {
+  font-weight: 600;
+}
+
+.filterable-header .filter-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 4px;
+  font-size: 0.8em;
+  color: #555;
+}
+
+.filterable-header .filter-toggle:hover {
+  color: #000;
+}
+
+.filterable-header .filter-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 8px;
+  min-width: 180px;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
