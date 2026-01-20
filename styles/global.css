@@ -364,21 +364,6 @@ th.sorted-desc .sort-indicator::after {
   }
 }
 
-/* ==========================================================
-   Added 1/20/26 - styling for All/Filters page
-   ========================================================== */
-
-.filterable-header {
-  position: relative;
-  white-space: nowrap;
-}
-
-.filterable-header .header-label {
-  font-weight: 600;
-}
-
-.filterable-header .filter-toggle {
-  background: none;
   border: none;
   cursor: pointer;
   margin-left: 4px;
