@@ -114,7 +114,7 @@
       </label>
     </div>
 
-    <!-- REGION (unchanged) -->
+    <!-- REGION -->
     <div>
       <label for="regionFilter"><strong>Region</strong></label><br>
       <select id="regionFilter">
@@ -130,34 +130,42 @@
     <div style="align-self:flex-end;">
       <button id="resetFilters">Reset Filters</button>
     </div>
-
   </div>
 
   <p id="resultsSummary" style="margin-top:12px; color:var(--color-text-light);"></p>
 </section>
 
-<th>
-  <div class="filterable-header">
-    <span class="header-label">Brand</span>
-    <button class="filter-toggle" aria-label="Filter by brand">
-      ▾
-    </button>
+<!-- ==========================================
+     RESULTS TABLE (FIXED)
+========================================== -->
+<section class="section">
+  <div style="overflow-x:auto;">
+    <table style="width:100%; border-collapse:collapse;">
+      <thead>
+        <tr style="border-bottom:1px solid var(--color-border);">
 
-    <div class="filter-dropdown" hidden>
-      <p style="margin: 0; font-size: 0.9em; color: #666;">
-        Brand filters coming soon
-      </p>
-    </div>
-  </div>
-</th>
+          <!-- BRAND HEADER WITH DROPDOWN -->
+          <th>
+            <div class="filterable-header">
+              <span class="header-label">Brand</span>
+              <button class="filter-toggle" aria-label="Filter by brand">▾</button>
 
+              <div class="filter-dropdown" hidden>
+                <p style="margin:0; font-size:0.9em; color:#666;">
+                  Brand filters coming soon
+                </p>
+              </div>
+            </div>
+          </th>
 
           <th data-sort="product">Product <span class="sort-indicator"></span></th>
           <th data-sort="spf">SPF <span class="sort-indicator"></span></th>
           <th data-sort="region">Region <span class="sort-indicator"></span></th>
           <th data-sort="filterType">Filter Type <span class="sort-indicator"></span></th>
+
         </tr>
       </thead>
+
       <tbody id="resultsTable"></tbody>
     </table>
   </div>
