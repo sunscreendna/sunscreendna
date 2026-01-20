@@ -144,7 +144,20 @@
     <table style="width:100%; border-collapse:collapse;">
       <thead>
         <tr style="border-bottom:1px solid var(--color-border);">
-          <th data-sort="brand">Brand <span class="sort-indicator"></span></th>
+          <th class="filterable-header">
+  <span class="header-label">Brand</span>
+  <button class="filter-toggle" aria-label="Filter by brand">
+    ▾
+  </button>
+
+  <div class="filter-dropdown" hidden>
+    <!-- Brand filter UI will go here later -->
+    <p style="margin: 0; font-size: 0.9em; color: #666;">
+      Brand filters coming soon
+    </p>
+  </div>
+</th>
+
           <th data-sort="product">Product <span class="sort-indicator"></span></th>
           <th data-sort="spf">SPF <span class="sort-indicator"></span></th>
           <th data-sort="region">Region <span class="sort-indicator"></span></th>
